@@ -9,7 +9,7 @@ It also ensures that two bread slices are added at the top and bottom and asks t
 
 ```csharp
 // should be abstract because the base class cannot make an actual sandwich
-abstract class SandwichBase {
+abstract class Sandwich {
   public void MakeSandwich() {
     this.AddBaseBread();
     this.AddStuffing();        // Base class calls the Child Class method.
