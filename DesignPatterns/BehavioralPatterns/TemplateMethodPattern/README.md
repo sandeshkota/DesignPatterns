@@ -7,7 +7,7 @@ Template Method is a behavioral design pattern that defines the skeleton of an a
 **Sandwich:** For any type of sandwich two breads are needed and the content between them can change. So in this case the base class defines the steps to make a sandwich.
 It also ensures that two bread slices are added at the top and bottom and asks the sub classes to override and implement adding the stuffing in b/w.
 
-```
+```csharp
 // should be abstract because the base class cannot make an actual sandwich
 abstract class SandwichBase {
   public void MakeSandwich() {
