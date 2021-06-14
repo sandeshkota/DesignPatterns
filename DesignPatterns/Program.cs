@@ -1,4 +1,5 @@
-﻿using DesignPatterns.BehavioralPatterns.StrategyPattern;
+﻿using DesignPatterns.BehavioralPatterns.MediatorPattern;
+using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
@@ -10,10 +11,33 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            StrategyPattern();
-            Console.WriteLine("Hello World!");
+
+
+
+
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Enter any ket to exit........");
+            Console.ReadLine();
         }
 
+
+        public static void MediatorPattern()
+        {
+            var amar = new Visitor("Amar");
+            var akbar = new Visitor("Akbar");
+            var anthony = new Visitor("Anthony");
+
+            var chatRoom = new ChatRoom();
+            amar.Enter(chatRoom);
+            akbar.Enter(chatRoom);
+            anthony.Enter(chatRoom);
+
+            amar.Send("Hello Everyone");
+            akbar.Send("Hello Amar!!");
+            anthony.Send("Welcome to the chat room Amar :)");
+        }
 
         public static void StrategyPattern()
         {
