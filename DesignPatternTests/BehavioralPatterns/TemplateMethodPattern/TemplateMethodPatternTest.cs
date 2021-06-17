@@ -13,9 +13,13 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         [Fact]
         public void User_Save_Success_Test()
         {
+            // arrange
             var user = new User { Name = "Sandesh" };
+
+            // act
             user.Save();
 
+            // assert
             Assert.Equal("India", user.Location);
             Assert.True(user.IsSaved, "Couldn't save the user");
             Assert.True(user.Id != default && user.Id > 0, "User Id not set after save");
@@ -24,9 +28,13 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         [Fact]
         public void User_Save_Failure_Test()
         {
+            // arrange
             var user = new User { Name = "SK" };
+
+            // act
             user.Save();
 
+            // assert
             Assert.NotEqual("India", user.Location);
             Assert.False(user.IsSaved, "user saved with only 4 characters");
             Assert.True(user.Id == default || user.Id <= 0, "User Id is set even when save failed");
@@ -35,9 +43,13 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         [Fact]
         public void Product_Save_Success_Test()
         {
+            // arrange
             var product = new Product { Name = "Phone", Price = 100.00 };
+
+            // act
             product.Save();
 
+            // assert
             Assert.True(product.IsSaved, "Couldn't save the product");
             Assert.True(product.Id != default && product.Id > 0, "Product Id not set after save");
         }
@@ -45,9 +57,13 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         [Fact]
         public void Product_Save_Failure_Test()
         {
+            // arrange
             var product = new Product();
+
+            // act
             product.Save();
 
+            // assert
             Assert.False(product.IsSaved, "user saved with only 4 characters");
             Assert.True(product.Id == default || product.Id <= 0, "Product Id is set even when save failed");
         }

@@ -3,6 +3,8 @@ using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
+using DesignPatterns.BehavioralPatterns.ObserverPattern;
+using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 using System;
 
 namespace DesignPatterns
@@ -12,16 +14,24 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
-
-
-
-
-
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
         }
 
+        public static void ObserverPattern()
+        {
+            var exceptionHandler = new ExceptionHandler();
+            var emailLogger = new EmailLogger();
+            var tableLogger = new TableLogger();
+
+            exceptionHandler.RegisterObserver(emailLogger);
+            exceptionHandler.RegisterObserver(tableLogger);
+
+            exceptionHandler.HandleException("Invalid Object Cast");
+            exceptionHandler.HandleException("Array has no elements");
+            exceptionHandler.HandleException("Object reference not set to an instance");
+        }
 
         public static void MediatorPattern()
         {

@@ -19,14 +19,17 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         [InlineData("Crisil", 5.7)]
         public void Customer_Rating_Agency_Test(string ratingAgencyName, double expectedInterestRate)
         {
+            // arrange
             var customerService = new CustomerService();
             customerService.SetRatingStrategy(GetRatingStrategy(ratingAgencyName));
             customerService.SetInterestStrategy(GetInterestRateStrategy(String.Empty));
             customerService.SetDiscountStrategy(GetDiscountStrategy(String.Empty));
 
+            // act
             var customerInterestRate = customerService.GetInterestRate(123, "Home");
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
+            // assert
             Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
         }
 
@@ -35,14 +38,17 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         [InlineData("High", 5.85)]
         public void Customer_Interest_Rate_Test(string interestRateBand, double expectedInterestRate)
         {
+            // arrange
             var customerService = new CustomerService();
             customerService.SetRatingStrategy(GetRatingStrategy(String.Empty));
             customerService.SetInterestStrategy(GetInterestRateStrategy(interestRateBand));
             customerService.SetDiscountStrategy(GetDiscountStrategy(String.Empty));
 
+            // act
             var customerInterestRate = customerService.GetInterestRate(123, "Home");
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
+            // assert
             Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
         }
 
@@ -52,14 +58,17 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         [InlineData("Land", 7.2)]
         public void Customer_Loan_Type_Test(string typeOfLoan, double expectedInterestRate)
         {
+            // arrange
             var customerService = new CustomerService();
             customerService.SetRatingStrategy(GetRatingStrategy(String.Empty));
             customerService.SetInterestStrategy(GetInterestRateStrategy(String.Empty));
             customerService.SetDiscountStrategy(GetDiscountStrategy(String.Empty));
 
+            // act
             var customerInterestRate = customerService.GetInterestRate(123, typeOfLoan);
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
+            // assert
             Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
         }
 

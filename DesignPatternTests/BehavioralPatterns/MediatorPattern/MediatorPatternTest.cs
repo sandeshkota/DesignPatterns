@@ -8,6 +8,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         [Fact]
         public void OneWay_Chat_Test()
         {
+            // arrange
             var amar = new Visitor("amar");
             var akbar = new Visitor("akbar");
 
@@ -15,9 +16,11 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
             amar.Enter(chatRoom);
             akbar.Enter(chatRoom);
 
+            // act
             amar.Send("Hello!!");
             amar.Send("I am from Mysuru");
 
+            // assert
             Assert.Equal(2, amar.TotalMessagesSent);
             Assert.Equal(2, akbar.TotalMessagesRecieved);
         }
@@ -26,6 +29,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         [Fact]
         public void TwoWay_Chat_Test()
         {
+            // arrange
             var amar = new Visitor("amar");
             var akbar = new Visitor("akbar");
 
@@ -33,10 +37,12 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
             amar.Enter(chatRoom);
             akbar.Enter(chatRoom);
 
+            // act
             amar.Send("Hello!!");
             amar.Send("I am from Mysuru");
             akbar.Send("Hey! Welcome Amar");
 
+            // assert
             Assert.Equal(2, amar.TotalMessagesSent);
             Assert.Equal(1, amar.TotalMessagesRecieved);
 
@@ -47,6 +53,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         [Fact]
         public void Leave_Chat_Test()
         {
+            // arrange
             var amar = new Visitor("amar");
             var akbar = new Visitor("akbar");
 
@@ -54,6 +61,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
             amar.Enter(chatRoom);
             akbar.Enter(chatRoom);
 
+            // act
             amar.Send("Hello!!");
             amar.Send("I am from Mysuru");
 
@@ -61,6 +69,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
 
             amar.Send("Are you there??");
 
+            // assert
             Assert.Equal(3, amar.TotalMessagesSent);
             Assert.Equal(2, akbar.TotalMessagesRecieved);
         }
