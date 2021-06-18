@@ -5,6 +5,7 @@ using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
 using DesignPatterns.BehavioralPatterns.ObserverPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
+using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 using System;
 
 namespace DesignPatterns
@@ -17,6 +18,19 @@ namespace DesignPatterns
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
+        }
+
+        public static void ChainOfResponsibilityPattern()
+        {
+            var teamLeader = new TeamLeader();
+            var manager = new Manager();
+            var cfo = new ChiefFinancialOfficer();
+            teamLeader.SetNextReimburser(manager);
+            manager.SetNextReimburser(cfo);
+
+            teamLeader.Reimburse(100);
+            teamLeader.Reimburse(200);
+            teamLeader.Reimburse(900);
         }
 
         public static void ObserverPattern()
