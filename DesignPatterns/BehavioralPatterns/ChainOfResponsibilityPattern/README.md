@@ -1,4 +1,4 @@
-## OBSERVER PATTERN
+## CHAIN OF RESPONSIBILITY PATTERN
 
 ![Chain Of Responsibility Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/chain-of-responsibility.png)
 
