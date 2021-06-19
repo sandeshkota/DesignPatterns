@@ -27,13 +27,13 @@
 
 ### UML Diagram
 
-![Template Method Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Template_Method.PNG)
-
 ### Requirement
 The above example is to save a User and Product information to a Database
 - The Objects should be mapped to a specific table and should be able to save to a Database
 - Every Object should be validated and should be saved only if it is a valid object
 - Each Object should be able to run it's own logic something and after saving the data. These actions should not be mandatory.
+
+![Template Method Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Template_Method.PNG)
 
 ### Implementation
 -  Since the requirement is to ensure that a certain steps should be followed regardless of it is User or Product
