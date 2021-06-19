@@ -49,4 +49,4 @@ If the reimbursement amount is,
 - the complaint is first sent to an L1 support 
 - if the L1 cannot address the issue, the complaint is sent to the next in chain which is L2 support
 - if the L2 cannot address the issue, the complaint is sent to the next in chain which is L3 support
-- in simillar way the complaint is sent to the next is chain until it is addressed
+- in simillar way the complaint is sent to the next is chain based on each company's chain configuration.
