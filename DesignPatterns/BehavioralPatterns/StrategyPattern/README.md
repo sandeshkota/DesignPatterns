@@ -1,5 +1,25 @@
 ## STRATEGY PATTERN
+
+![Strategy Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/strategy.png)
+
 > It defines a family of algorithms and enacapsulates each algorithm and also allows it to be interachangable at run time.
+
+### Description
+
+### UML Diagram
+
+
+### Advantages
+- De-Coupling: Isoalte algorithm implementation from the code that uses it
+- Re-Usability: Using Composition rather than Inheritance
+- Control: Change algorithm at run time
+- Open/Close Principle: New strategy classes can be added without impacting the existing code
+- Prevents conditional statements
+
+### Drawbacks
+- Clients must be aware of the various algorithms available. And decide the suitable one based on the scenario.
+- Increases the number of classes to manage. If there are too many strategies, maintenance can become an overhead.
+- Modern languages lets you simillar behaviour by passing the algorithm while execution.
 
 ## Code Example
 
@@ -31,21 +51,6 @@ The above example is of a Bank which lends money to customers based on various f
 - By extracting the these logics into a interface we have achieved,
   - Flexibility: Let the strategies be decided at run time
   - Extensibility: The bank can decide to add more strategies (for any of the logic - Customer rating, Interest Rate, Discount) without impacting the existing code 
-
-
-
-### Advantages
-- De-Coupling: Isoalte algorithm implementation from the code that uses it
-- Re-Usability: Using Composition rather than Inheritance
-- Control: Change algorithm at run time
-- Open/Close Principle: New strategy classes can be added without impacting the existing code
-- Prevents conditional statements
-
-### Drawbacks
-- Clients must be aware of the various algorithms available. And decide the suitable one based on the scenario.
-- Increases the number of classes to manage. If there are too many strategies, maintenance can become an overhead.
-- Modern languages lets you simillar behaviour by passing the algorithm while execution.
-
 
 ## Other Examples
 
