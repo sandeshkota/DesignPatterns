@@ -1,5 +1,24 @@
 ## MEDIATOR PATTERN
+
+![Mediator Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/mediator.png)
+
 > Reduces the complex communication between multiple objects. The pattern restricts direct communication between objects and acts as a mediator for communication between the objects.
+
+### Description
+
+### UML Diagram
+
+### Advantages
+- De-Coupling: By reducing the dependency between objects. Reduces many-many relationship to one-many.
+- Control: The mediator controls all the communication at one place.
+- Flexibility: Impact is very minimal if a component/class is removed. ALso adding a new class for communication is easier as only the mediator should be aware of the new class.
+
+### Drawbacks
+- Over time, the mediator object can become GOD object
+
+
+
+
 
 ## Code Example
 
@@ -25,13 +44,6 @@ The above example is to create a chat room wherein users can join the chatroom o
   - ALl communication happens through the chatroom
 
 
-### Advantages
-- De-Coupling: By reducing the dependency between objects. Reduces many-many relationship to one-many.
-- Control: The mediator controls all the communication at one place.
-- Flexibility: Impact is very minimal if a component/class is removed. ALso adding a new class for communication is easier as only the mediator should be aware of the new class.
-
-### Drawbacks
-- Over time, the mediator object can become GOD object
 
 
 ## Other Examples
