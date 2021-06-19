@@ -1,5 +1,4 @@
 ## Template Method Pattern
-
 ![Template Method Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/template-method.png)
 
 > It defines the skeleton of an algorithm in the super/base class but lets subclasses override specific steps of the algorithm without changing its structure.
@@ -25,7 +24,7 @@
 
 ## Code Example
 
-### UML Diagram
+
 
 ### Requirement
 The above example is to save a User and Product information to a Database
@@ -33,6 +32,7 @@ The above example is to save a User and Product information to a Database
 - Every Object should be validated and should be saved only if it is a valid object
 - Each Object should be able to run it's own logic something and after saving the data. These actions should not be mandatory.
 
+### UML Diagram
 ![Template Method Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Template_Method.PNG)
 
 ### Implementation
