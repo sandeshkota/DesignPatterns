@@ -1,5 +1,4 @@
 ## STRATEGY PATTERN
-
 ![Strategy Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/strategy.png)
 
 > It defines a family of algorithms and enacapsulates each algorithm and also allows it to be interachangable at run time.
@@ -7,7 +6,6 @@
 ### Description
 
 ### UML Diagram
-
 
 ### Advantages
 - De-Coupling: Isoalte algorithm implementation from the code that uses it
@@ -21,10 +19,10 @@
 - Increases the number of classes to manage. If there are too many strategies, maintenance can become an overhead.
 - Modern languages lets you simillar behaviour by passing the algorithm while execution.
 
-## Code Example
 
-### UML Diagram
-![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Strategy.PNG)
+
+
+## Code Example
 
 ### Requirement
 The above example is of a Bank which lends money to customers based on various factors.
@@ -34,6 +32,11 @@ The above example is of a Bank which lends money to customers based on various f
   - Interest Rate: Should be able to decide if the bank should go with High Interest Rate or Low interest rates
   - Discounts: The Bank officer should be able to provide discounts to customers if needed 
 - In the above requirement the Bank officer needs flexibility to decide all three different strategies (Rating, Interest Rate, Discount) at run time. The application should be able to take these inputs and calculate the itnerest rate.
+
+
+### UML Diagram
+![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Strategy.PNG)
+
 
 ### Implementation
 - Customer Rating
@@ -51,6 +54,9 @@ The above example is of a Bank which lends money to customers based on various f
 - By extracting the these logics into a interface we have achieved,
   - Flexibility: Let the strategies be decided at run time
   - Extensibility: The bank can decide to add more strategies (for any of the logic - Customer rating, Interest Rate, Discount) without impacting the existing code 
+
+
+
 
 ## Other Examples
 
