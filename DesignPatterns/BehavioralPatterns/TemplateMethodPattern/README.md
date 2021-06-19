@@ -1,5 +1,26 @@
 ## Template Method Pattern
+
+![Template Method Pattern Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/Patterns/template-method.png)
+
 > It defines the skeleton of an algorithm in the super/base class but lets subclasses override specific steps of the algorithm without changing its structure.
+
+### Description
+
+### UML Diagram
+
+### Advantages
+- Structure: Ensures that the necessary steps are processed and in the order decided
+- Re-Usability: The common code is moved to the base class and reused by all child classes
+- Flexibility: The child can implement it's own logic for few of the steps
+
+### Drawbacks
+- Violation of Liskov Substitution Principle by suppressing a default step implementation via a subclass.
+
+### Notes
+- Follows Hollywood Principle => "You do not call us, we will call you".
+  - The base class calls the child class methods based on the order it decides
+
+
 
 
 ## Code Example
@@ -32,18 +53,8 @@ The above example is to save a User and Product information to a Database
 - Also by marking ```Validate()``` method as virtual, we have ensured each child class is responsible of it's own validation
 - Also we have ensured that the ```SaveToDB()``` logic is reused by the child objects
 
-### Advantages
-- Structure: Ensures that the necessary steps are processed and in the order decided
-- Re-Usability: The common code is moved to the base class and reused by all child classes
-- Flexibility: The child can implement it's own logic for few of the steps
 
 
-### Drawbacks
-- Violation of Liskov Substitution Principle by suppressing a default step implementation via a subclass.
-
-### Notes
-- Follows Hollywood Principle => "You do not call us, we will call you".
-  - The base class calls the child class methods based on the order it decides
 
 ## Other Examples:
 
