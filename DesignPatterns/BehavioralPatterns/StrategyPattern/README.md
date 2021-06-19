@@ -1,9 +1,9 @@
 ## STRATEGY PATTERN
-- It defines a family of algorithms and enacapsulates each algorithm and also allows it to be interachangable at run time.
+> It defines a family of algorithms and enacapsulates each algorithm and also allows it to be interachangable at run time.
 
 ## Code Example
 
-![image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Strategy.PNG)
+![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Strategy.PNG)
 
 ### Requirement
 The above example is of a Bank which lends money to customers based on various factors.
