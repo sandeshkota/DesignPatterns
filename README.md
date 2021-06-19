@@ -25,13 +25,13 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - Flyweign Pattern
   - Proxy Pattern
 - Behavioral Patterns
-  - Chain Of Responsibility Pattern
+  - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
   - Command Pattern
   - Iterator Pattern
-  - Mediator Pattern
+  - [Mediator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MediatorPattern)
   - Memento Pattern
-  - Observer Pattern
+  - [Observer Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ObserverPattern)
   - State Pattern
-  - Strategy Pattern
-  - Template Method Pattern
+  - [Strategy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/StrategyPattern)
+  - [Template Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/TemplateMethodPattern)
   - Visitor Pattern
