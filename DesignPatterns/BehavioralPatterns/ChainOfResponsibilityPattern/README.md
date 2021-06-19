@@ -50,3 +50,7 @@ If the reimbursement amount is,
 - if the L1 cannot address the issue, the complaint is sent to the next in chain which is L2 support
 - if the L2 cannot address the issue, the complaint is sent to the next in chain which is L3 support
 - in simillar way the complaint is sent to the next is chain based on each company's chain configuration.
+
+### Middlewares
+- The middlewares in any typical framework uses Chain Of Responsibility Pattern
+- Ex: Node JS middlewares, dotnet core middlewares, etc..
