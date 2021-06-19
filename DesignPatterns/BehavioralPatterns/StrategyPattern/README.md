@@ -1,5 +1,5 @@
 ## STRATEGY PATTERN
-- It defines a family of algorithms. It enacapsulates each algorithm and allows it to be interachangable at run time.
+- It defines a family of algorithms and enacapsulates each algorithm and also allows it to be interachangable at run time.
 
 ## Code Example
 
