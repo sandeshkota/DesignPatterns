@@ -3,6 +3,7 @@
 
 ## Code Example
 
+### UML Diagram
 ![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Strategy.PNG)
 
 ### Requirement
