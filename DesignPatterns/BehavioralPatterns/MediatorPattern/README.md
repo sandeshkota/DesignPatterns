@@ -22,14 +22,14 @@
 
 ## Code Example
 
-### UML Diagram
-![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Mediator.PNG)
-
 ### Requirement
 The above example is to create a chat room wherein users can join the chatroom or leave as they want. And the chatroom should provide a channel through which multiple users can communicate with each other.
 - There should be a chatroom to which people can join and leave.
 - Users within a chatroom can communicate with each other through the chat room.
 - Direct interaction between the users should be restricted and the communication should happen only through the Chatroom.
+
+### UML Diagram
+![Strategy Pattern UML Image](https://raw.githubusercontent.com/sandeshkota/DesignPatterns/main/Assets/UML/Mediator.PNG)
 
 ### Implementation
 - Create a chat room class which holds list of users that are in the chat room.
