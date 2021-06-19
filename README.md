@@ -9,7 +9,7 @@ Pattern is not a code that you can refer in your project. It is more of a concep
 Patterns as a concept gained popularity after the book **Design Patterns: Elements of reusable Object Oriented Software** 
 was published in 1994 by four authors who are famously called as **Gang Of Four**
 
-### Classification
+## Classification
 - Creational Patterns
   - Factory Method Pattern
   - Abstract Factory Pattern
