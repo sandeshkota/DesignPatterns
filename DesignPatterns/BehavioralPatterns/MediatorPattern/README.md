@@ -26,8 +26,9 @@ The above example is to create a chat room wherein users can join the chatroom o
 
 
 ### Advantages
-- De-Coupling: By reducing the dependency between objects
-- Control: The mediator controls all the communication at one place
+- De-Coupling: By reducing the dependency between objects. Reduces many-many relationship to one-many.
+- Control: The mediator controls all the communication at one place.
+- Flexibility: Impact is very minimal if a component/class is removed. ALso adding a new class for communication is easier as only the mediator should be aware of the new class.
 
 ### Drawbacks
 - Over time, the mediator object can become GOD object
