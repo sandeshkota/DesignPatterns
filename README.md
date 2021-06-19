@@ -48,4 +48,4 @@ If you have found this project helpful, either as a library that you use or as a
 
 ## Contact
 
-Having any issues or troubles getting started? Drop a mail to sandeshjkota@gmail.com or [Raise a Bug or Feature Request](https://github.com/sandeshkota/DesignPatterns/issues/new). Always happy to help.
+Having any issues or troubles getting started? Drop a mail to sandeshjkota@gmail.com or [Raise a Bug or Feature Request](https://github.com/sandeshkota/DesignPatterns/issues). Always happy to help.
