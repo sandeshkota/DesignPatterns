@@ -1,7 +1,6 @@
 ﻿using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategy;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategy;
-using DesignPatterns.BehavioralPatterns.StrategyPattern.Repositories;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategy;
 
 
@@ -10,18 +9,11 @@ namespace DesignPatterns.BehavioralPatterns.StrategyPattern
     public class CustomerService : ICustomerService
     {
         #region Constructor and Members
-        ICustomerRepository _repository;
         IRatingStrategy _ratingStrategy;
         IInterestRateStrategy _interestStrategy;
         IDiscountStrategy _discountStrategy;
         private const double MINIMUM_INTEREST_DATE = 5.00;
-
-        public CustomerService()
-        {
-            _repository = new CustomerRepository();
-        }
         #endregion
-
 
         public double GetInterestRate(int customerId, string typeOfLoan)
         {

@@ -12,6 +12,7 @@ namespace DesignPatterns.BehavioralPatterns.TemplateMethodPattern
         public string Name { get; set; }
         public string Location { get; set; }
 
+
         protected override ValidationMessage Validate()
         {
             var validationMessage = new ValidationMessage();

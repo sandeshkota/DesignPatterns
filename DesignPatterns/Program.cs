@@ -3,6 +3,7 @@ using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
+using DesignPatterns.BehavioralPatterns.TemplateMethodPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
@@ -61,6 +62,15 @@ namespace DesignPatterns
             amar.Send("Hello Everyone");
             akbar.Send("Hello Amar!!");
             anthony.Send("Welcome to the chat room Amar :)");
+        }
+
+        public static void TemplateMethodPattern()
+        {
+            var user = new User { Name = "Sandesh" };
+            user.Save();
+
+            var product = new Product { Name = "Phone", Price = 100.00 };
+            product.Save();
         }
 
         public static void StrategyPattern()

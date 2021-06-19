@@ -10,7 +10,6 @@ namespace DesignPatterns.BehavioralPatterns.TemplateMethodPattern
     {
         public bool IsSaved { get; set; }
 
-
         public void Save()
         {
             var validationMessage = this.Validate();
@@ -29,8 +28,9 @@ namespace DesignPatterns.BehavioralPatterns.TemplateMethodPattern
         protected virtual void BeforeSave() { }
         protected virtual void AfterSave(int id) { }
 
-        protected int SaveToDB() {
+        private int SaveToDB() {
             // save to DB
+            Console.WriteLine($"Saving data into {this.GetType().Name} table");
             this.IsSaved = true;
 
             return new Random().Next();
