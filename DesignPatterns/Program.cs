@@ -7,6 +7,8 @@ using DesignPatterns.BehavioralPatterns.TemplateMethodPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
+using DesignPatterns.BehavioralPatterns.CommandPattern;
+using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 using System;
 
 namespace DesignPatterns
@@ -19,6 +21,36 @@ namespace DesignPatterns
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
+        }
+
+        public static void CommandPattern()
+        {
+            var photo = new Photo();
+            var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
+            var decreaseBrightnessCommand = new DecreaseBrightnessCommand(photo);
+            var addVividFilterCommand = new AddVividFilterCommand(photo);
+            var removeVividFilterCommand = new RemoveVividFilterCommand(photo);
+            var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand, 
+                                                addVividFilterCommand, removeVividFilterCommand);
+
+            photoEditor.IncreaseBrightness();
+            photoEditor.IncreaseBrightness();
+            photoEditor.DecreaseBrightness();
+            photoEditor.AddVividFilter();
+            photoEditor.RemoveVividFilter();
+            photoEditor.AddVividFilter();
+
+            Console.WriteLine();
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("UNDO OPERTIONS");
+            Console.WriteLine("--------------------------");
+
+            photoEditor.Undo();
+            photoEditor.Undo();
+            photoEditor.Undo();
+            photoEditor.Undo();
+            photoEditor.Undo();
+            photoEditor.Undo();
         }
 
         public static void ChainOfResponsibilityPattern()
