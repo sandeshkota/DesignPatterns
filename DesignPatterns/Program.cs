@@ -1,4 +1,5 @@
-﻿using DesignPatterns.BehavioralPatterns.MediatorPattern;
+﻿using System;
+using DesignPatterns.BehavioralPatterns.MediatorPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
@@ -9,7 +10,7 @@ using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
-using System;
+using DesignPatterns.BehavioralPatterns.IteratorPattern;
 
 namespace DesignPatterns
 {
@@ -17,10 +18,59 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            IteratorPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
+        }
+
+        public static void IteratorPattern()
+        {
+            var customer = new Customer
+            {
+                Name = "Sandesh"
+            };
+            customer.Address.Add("#01, First Street, Mysuru, Karnataka, India, 570001, 99889988");
+            customer.Address.Add("#02, Second Street, Bengaluru, Karnataka, India, 560001, 77667766");
+
+            var employee = new Employee
+            {
+                Name = "Kota",
+                BuildingNumber1 = "#101",
+                Street1 = "Main Street",
+                City1 = "Shilong",
+                State1 = "Meghalaya",
+                Country1 = "India",
+                ZipCode1 = "534009",
+                PhoneNumber1 = "11111111",
+                BuildingNumber2 = "#202",
+                Street2 = "Sub Street",
+                City2 = "Jaipur",
+                State2 = "Rajasthan",
+                Country2 = "India",
+                ZipCode2 = "230658",
+                PhoneNumber2 = "33333333",
+            };
+
+
+            //var addressIterator = customer.GetAddressIterator();
+            var addressIterator = employee.GetAddressIterator();
+            while(addressIterator.HasAddress())
+            {
+                var address = addressIterator.GetAddress();
+
+                Console.WriteLine("----- Address -----");
+                Console.WriteLine($"Building: {address.BuildingNumber}");
+                Console.WriteLine($"Street: {address.StreetName}");
+                Console.WriteLine($"City-ZipCode: {address.City} - {address.ZipCode}");
+                Console.WriteLine($"State-Country: {address.State} - {address.Country}");
+                Console.WriteLine($"Phone Number: {address.PhoneNumber}");
+
+                addressIterator.MoveToNextAddress();
+            }
+
         }
 
         public static void CommandPattern()
