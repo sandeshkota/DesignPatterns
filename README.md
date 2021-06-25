@@ -26,7 +26,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - Proxy Pattern
 - Behavioral Patterns
   - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
-  - Command Pattern
+  - [Command Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/CommandPattern)
   - [Iterator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/IteratorPattern)
   - [Mediator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MediatorPattern)
   - Memento Pattern
