@@ -11,6 +11,8 @@ using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 using DesignPatterns.BehavioralPatterns.IteratorPattern;
+using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
+using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 
 namespace DesignPatterns
 {
@@ -18,12 +20,37 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            IteratorPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
+        }
+
+        #region BEHAVIOR PATTERNS
+        public static void VisitorPattern()
+        {
+            var totalPoints = 0;
+
+            var gasOfferVisitor = new GasOfferVisitor();
+            var hotelOfferVisitor = new HotelOfferVisitor();
+
+            ICreditCard bronzeCreditCard = new BronzeCreditCard();
+            ICreditCard silverCreditCard = new SilverCreditCard();
+            ICreditCard goldCreditCard = new GoldCreditCard();
+
+            totalPoints += bronzeCreditCard.Accept(gasOfferVisitor);
+            totalPoints += bronzeCreditCard.Accept(hotelOfferVisitor);
+            Console.WriteLine($"Bronze Credit Card: (Used for Gas & Hotel) Total Points = {totalPoints}");
+
+
+            totalPoints = 0;
+            totalPoints += silverCreditCard.Accept(gasOfferVisitor);
+            Console.WriteLine($"Gold Credit Card: (Used for Gas) Total Points = {totalPoints}");
+
+            totalPoints = 0;
+            totalPoints += goldCreditCard.Accept(gasOfferVisitor);
+            Console.WriteLine($"Gold Credit Card: (Used for Gas) Total Points = {totalPoints}");
         }
 
         public static void IteratorPattern()
@@ -57,7 +84,7 @@ namespace DesignPatterns
 
             //var addressIterator = customer.GetAddressIterator();
             var addressIterator = employee.GetAddressIterator();
-            while(addressIterator.HasAddress())
+            while (addressIterator.HasAddress())
             {
                 var address = addressIterator.GetAddress();
 
@@ -80,7 +107,7 @@ namespace DesignPatterns
             var decreaseBrightnessCommand = new DecreaseBrightnessCommand(photo);
             var addVividFilterCommand = new AddVividFilterCommand(photo);
             var removeVividFilterCommand = new RemoveVividFilterCommand(photo);
-            var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand, 
+            var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
             photoEditor.IncreaseBrightness();
@@ -166,6 +193,7 @@ namespace DesignPatterns
 
             Console.WriteLine($"The interest rate for customer is {customerInterestRate}");
         }
+        #endregion
 
     }
 }
