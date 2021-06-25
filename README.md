@@ -34,7 +34,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - State Pattern
   - [Strategy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/StrategyPattern)
   - [Template Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/TemplateMethodPattern)
-  - Visitor Pattern
+  - [Visitor Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/VisitorPattern)
 
 
 ## Give a Star! :star:
