@@ -27,7 +27,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
 - Behavioral Patterns
   - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
   - Command Pattern
-  - Iterator Pattern
+  - [Iterator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/IteratorPattern)
   - [Mediator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MediatorPattern)
   - Memento Pattern
   - [Observer Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ObserverPattern)
