@@ -29,7 +29,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - [Command Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/CommandPattern)
   - [Iterator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/IteratorPattern)
   - [Mediator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MediatorPattern)
-  - Memento Pattern
+  - [Memento Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MementoPattern)
   - [Observer Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ObserverPattern)
   - State Pattern
   - [Strategy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/StrategyPattern)
