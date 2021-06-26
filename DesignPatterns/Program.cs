@@ -13,6 +13,7 @@ using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 using DesignPatterns.BehavioralPatterns.IteratorPattern;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
+using DesignPatterns.BehavioralPatterns.MementoPattern;
 
 namespace DesignPatterns
 {
@@ -20,6 +21,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            MementoPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -28,6 +30,45 @@ namespace DesignPatterns
         }
 
         #region BEHAVIOR PATTERNS
+
+        public static void MementoPattern()
+        {
+            var originator = new Originator();
+            var careTaker = new CareTaker();
+
+            var photograph = new Photograph();
+            photograph.BrightnessLevel += 20;
+            photograph.AddFilter("VIVID");
+            originator.SetPhotograph(photograph);
+
+            originator.SaveToMemento(photograph);
+
+            photograph.AddFilter("NATURE");
+            var memento = originator.SaveToMemento(photograph);
+            careTaker.AddMemento(memento);
+
+            photograph.AddFilter("SNOWFALL");
+            photograph.AddFilter("AUTUMN");
+            memento = originator.SaveToMemento(photograph);
+            careTaker.AddMemento(memento);
+
+            photograph.BrightnessLevel -= 3;
+            memento = originator.SaveToMemento(photograph);
+            careTaker.AddMemento(memento);
+
+            var firstBackup = careTaker.GetMemento(0);
+            var firstPhotograph = firstBackup.GetSavedPhotograph();
+            Console.WriteLine($"[1] Photograph Details: Brightness = {firstPhotograph.BrightnessLevel}  |  Filters = { string.Join(" , ", firstPhotograph.GetFilters()) } ");
+
+            var secondBackup = careTaker.GetMemento(1);
+            var secondPhotograph = secondBackup.GetSavedPhotograph();
+            Console.WriteLine($"[2] Photograph Details: Brightness = {secondPhotograph.BrightnessLevel}  |  Filters = { string.Join(" , ", secondPhotograph.GetFilters()) } ");
+
+            var thirdBackup = careTaker.GetMemento(2);
+            var thirdPhotograph = thirdBackup.GetSavedPhotograph();
+            Console.WriteLine($"[2] Photograph Details: Brightness = {thirdPhotograph.BrightnessLevel}  |  Filters = { string.Join(" , ", thirdPhotograph.GetFilters()) } ");
+        }
+
         public static void VisitorPattern()
         {
             var totalPoints = 0;
