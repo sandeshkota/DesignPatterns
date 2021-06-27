@@ -11,6 +11,7 @@ using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 using DesignPatterns.BehavioralPatterns.IteratorPattern;
+using DesignPatterns.BehavioralPatterns.IteratorPattern.Iterators;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 using DesignPatterns.BehavioralPatterns.MementoPattern;
@@ -24,7 +25,6 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -168,27 +168,19 @@ namespace DesignPatterns
                 PhoneNumber2 = "33333333",
             };
 
-            Console.WriteLine("----- ----- -----");
-            Console.WriteLine("EMPLOYEE ADRESSES");
             var addressIterator = employee.GetAddressIterator();
-            while (addressIterator.HasAddress())
-            {
-                var address = addressIterator.GetAddress();
-
-                Console.WriteLine("----- Address -----");
-                Console.WriteLine($"Building: {address.BuildingNumber}");
-                Console.WriteLine($"Street: {address.StreetName}");
-                Console.WriteLine($"City-ZipCode: {address.City} - {address.ZipCode}");
-                Console.WriteLine($"State-Country: {address.State} - {address.Country}");
-                Console.WriteLine($"Phone Number: {address.PhoneNumber}");
-
-                addressIterator.MoveToNextAddress();
-            }
+            PrintAddresses("EMPLOYEE", addressIterator);
 
             Console.WriteLine();
-            Console.WriteLine("----- ----- -----");
-            Console.WriteLine("CUSTOMER ADRESSES");
+
             addressIterator = customer.GetAddressIterator();
+            PrintAddresses("CUSTOMER", addressIterator);
+        }
+
+        private static void PrintAddresses(string objectType, IAddressIterator addressIterator)
+        {
+            Console.WriteLine("----- ----- -----");
+            Console.WriteLine($"{objectType} ADRESSES");
             while (addressIterator.HasAddress())
             {
                 var address = addressIterator.GetAddress();
