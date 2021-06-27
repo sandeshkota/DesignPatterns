@@ -7,6 +7,7 @@ namespace DesignPatternTests.BehavioralPatterns.IteratorPattern
     public class IteratorPatternTest
     {
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Customer_Iterator_Test()
         {
             // arrange
@@ -35,6 +36,7 @@ namespace DesignPatternTests.BehavioralPatterns.IteratorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Customer_Iterator_Null_Test()
         {
             // arrange
@@ -55,6 +57,7 @@ namespace DesignPatternTests.BehavioralPatterns.IteratorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Employee_Iterator_Test()
         {
             // arrange
@@ -98,6 +101,7 @@ namespace DesignPatternTests.BehavioralPatterns.IteratorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Employee_Iterator_Null_Test()
         {
             // arrange

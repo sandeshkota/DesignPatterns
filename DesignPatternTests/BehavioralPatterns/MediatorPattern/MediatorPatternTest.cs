@@ -6,6 +6,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
     public class MediatorPatternTest
     {
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void OneWay_Chat_Test()
         {
             // arrange
@@ -25,8 +26,8 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
             Assert.Equal(2, akbar.TotalMessagesRecieved);
         }
 
-
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void TwoWay_Chat_Test()
         {
             // arrange
@@ -51,6 +52,7 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Leave_Chat_Test()
         {
             // arrange
