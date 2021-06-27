@@ -15,10 +15,11 @@ using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 using DesignPatterns.BehavioralPatterns.MementoPattern;
 using DesignPatterns.BehavioralPatterns.StatePattern;
-
+using System.Diagnostics.CodeAnalysis;
 
 namespace DesignPatterns
 {
+    [ExcludeFromCodeCoverage]
     static class Program
     {
         static void Main(string[] args)
