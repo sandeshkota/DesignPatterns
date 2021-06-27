@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.MementoPattern
 {
     public class Memento
     {
-        private Photograph _photograph;
+        private readonly Photograph _photograph;
 
         public Memento(int brightnessLevel, List<string> filters)
         {

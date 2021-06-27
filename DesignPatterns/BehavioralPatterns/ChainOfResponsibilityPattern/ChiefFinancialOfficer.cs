@@ -8,7 +8,6 @@ namespace DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern
 {
     public class ChiefFinancialOfficer : IReimburser
     {
-        private IReimburser _successor;
         private const double REIMBURSE_LIMIT = 1000.00;
         public bool HasReimbursed = false;
 
@@ -27,7 +26,7 @@ namespace DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern
 
         public void SetNextReimburser(IReimburser reimburser)
         {
-            _successor = reimburser;
+            // this is the last person in the approval chain
         }
     }
 }

@@ -8,8 +8,8 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 {
     public class WithheldAccountState: IAccountState
     {
-        private double _withdrawLimit = 100.00;
-        private Account _account;
+        private readonly double _withdrawLimit = 100.00;
+        private readonly Account _account;
         public WithheldAccountState(Account account)
         {
             this._account = account;
@@ -52,7 +52,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 
         public void MoveToWitheldState()
         {
-            
+            // Do nothing because the account is already in Withheld State
         }
     }
 }

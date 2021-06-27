@@ -19,10 +19,11 @@ using DesignPatterns.BehavioralPatterns.StatePattern;
 
 namespace DesignPatterns
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
+            
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -166,8 +167,8 @@ namespace DesignPatterns
                 PhoneNumber2 = "33333333",
             };
 
-
-            //var addressIterator = customer.GetAddressIterator();
+            Console.WriteLine("----- ----- -----");
+            Console.WriteLine("EMPLOYEE ADRESSES");
             var addressIterator = employee.GetAddressIterator();
             while (addressIterator.HasAddress())
             {
@@ -183,6 +184,23 @@ namespace DesignPatterns
                 addressIterator.MoveToNextAddress();
             }
 
+            Console.WriteLine();
+            Console.WriteLine("----- ----- -----");
+            Console.WriteLine("CUSTOMER ADRESSES");
+            addressIterator = customer.GetAddressIterator();
+            while (addressIterator.HasAddress())
+            {
+                var address = addressIterator.GetAddress();
+
+                Console.WriteLine("----- Address -----");
+                Console.WriteLine($"Building: {address.BuildingNumber}");
+                Console.WriteLine($"Street: {address.StreetName}");
+                Console.WriteLine($"City-ZipCode: {address.City} - {address.ZipCode}");
+                Console.WriteLine($"State-Country: {address.State} - {address.Country}");
+                Console.WriteLine($"Phone Number: {address.PhoneNumber}");
+
+                addressIterator.MoveToNextAddress();
+            }
         }
 
         public static void CommandPattern()

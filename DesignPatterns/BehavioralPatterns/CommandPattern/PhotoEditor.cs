@@ -9,11 +9,11 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern
 {
     public class PhotoEditor
     {
-        private EditorCommandHistory _commandHistory;
-        private IncreaseBrightnessCommand _increaseBrightnessCommand;
-        private DecreaseBrightnessCommand _decreaseBrightnessCommand;
-        private AddVividFilterCommand _addVividFilterCommand;
-        private RemoveVividFilterCommand _removeVividFilterCommand;
+        private readonly EditorCommandHistory _commandHistory;
+        private readonly IncreaseBrightnessCommand _increaseBrightnessCommand;
+        private readonly DecreaseBrightnessCommand _decreaseBrightnessCommand;
+        private readonly AddVividFilterCommand _addVividFilterCommand;
+        private readonly RemoveVividFilterCommand _removeVividFilterCommand;
 
         public PhotoEditor(IncreaseBrightnessCommand increaseBrightnessCommand,
                             DecreaseBrightnessCommand decreaseBrightnessCommand,

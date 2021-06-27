@@ -9,7 +9,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern.Commands
     public class RemoveVividFilterCommand : ICommand
     {
         private const string FILTER = "VIVID";
-        private Photo _photo;
+        private readonly Photo _photo;
         public RemoveVividFilterCommand(Photo photo)
         {
             this._photo = photo;

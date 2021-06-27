@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 {
     public class ClosedAccountState: IAccountState
     {
-        private Account _account;
+        private readonly Account _account;
         public ClosedAccountState(Account account)
         {
             this._account = account;
@@ -32,7 +32,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 
         public void MoveToClosedState()
         {
-            
+            // Do nothing because the account is already in Closed State
         }
 
         public void MoveToOpenedState()

@@ -7,8 +7,7 @@ namespace DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies
 
         public string GetCustomerRating(int customerId)
         {
-            // some logic and retuns the rating
-            return "CCC"; // "AAA";
+            return "CCC";
         }
 
     }

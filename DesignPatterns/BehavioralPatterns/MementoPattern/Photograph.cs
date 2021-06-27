@@ -9,7 +9,7 @@ namespace DesignPatterns.BehavioralPatterns.MementoPattern
     public class Photograph
     {
         public int BrightnessLevel { get; set; } = 50;
-        private PhotographFilters _filters = new PhotographFilters();
+        private readonly PhotographFilters _filters = new PhotographFilters();
 
         public void AddFilter(string filter)
         {

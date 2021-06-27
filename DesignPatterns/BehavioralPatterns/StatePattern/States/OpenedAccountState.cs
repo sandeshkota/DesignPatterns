@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 {
     public class OpenedAccountState : IAccountState
     {
-        private Account _account;
+        private readonly Account _account;
         public OpenedAccountState(Account account)
         {
             this._account = account;
@@ -42,7 +42,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 
         public void MoveToOpenedState()
         {
-            
+            // Do nothing because the account is already in Opened State
         }
 
         public void MoveToWitheldState()
