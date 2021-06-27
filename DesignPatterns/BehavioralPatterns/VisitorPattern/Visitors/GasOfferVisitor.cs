@@ -11,19 +11,19 @@ namespace DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors
     {
         public int Visit(BronzeCreditCard bronzeCreditCard)
         {
-            Console.WriteLine("Gas Offer: Bronze Credit Card");
+            Console.WriteLine($"Gas Offer: {bronzeCreditCard.GetName()}");
             return 3;
         }
 
         public int Visit(SilverCreditCard silverCreditCard)
         {
-            Console.WriteLine("Gas Offer: Bronze Credit Card");
+            Console.WriteLine($"Gas Offer: {silverCreditCard.GetName()}");
             return 6;
         }
 
         public int Visit(GoldCreditCard goldCreditCard)
         {
-            Console.WriteLine("Gas Offer: Bronze Credit Card");
+            Console.WriteLine($"Gas Offer: {goldCreditCard.GetName()}");
             return 10;
         }
     }
