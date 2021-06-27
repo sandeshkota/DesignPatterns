@@ -63,7 +63,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
 
         public void ChangeToWithheldState()
         {
-            this._accountState.MoveToWitheldState();
+            this._accountState.MoveToWithheldState();
         }
     }
 }

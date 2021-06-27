@@ -15,6 +15,6 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 
         void MoveToOpenedState();
         void MoveToClosedState();
-        void MoveToWitheldState();
+        void MoveToWithheldState();
     }
 }

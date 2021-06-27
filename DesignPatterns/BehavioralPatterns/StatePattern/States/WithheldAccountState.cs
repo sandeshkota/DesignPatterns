@@ -50,7 +50,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
             this._account.ChangeState(new OpenedAccountState(this._account));
         }
 
-        public void MoveToWitheldState()
+        public void MoveToWithheldState()
         {
             // Do nothing because the account is already in Withheld State
         }

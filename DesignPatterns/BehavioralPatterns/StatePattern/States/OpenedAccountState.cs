@@ -45,7 +45,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
             // Do nothing because the account is already in Opened State
         }
 
-        public void MoveToWitheldState()
+        public void MoveToWithheldState()
         {
             this._account.ChangeState(new WithheldAccountState(this._account));
         }

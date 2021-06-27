@@ -40,7 +40,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
             this._account.ChangeState(new OpenedAccountState(this._account));
         }
 
-        public void MoveToWitheldState()
+        public void MoveToWithheldState()
         {
             throw new InvalidOperationException("Cannot move account from closed state to withheld state");
         }
