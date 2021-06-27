@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.MediatorPattern
 {
     public class ChatRoom : IChatRoom
     {
-        private List<IVisitor> _activeVisitors = new();
+        private readonly List<IVisitor> _activeVisitors = new();
 
         public void Send(string message, Visitor sender)
         {

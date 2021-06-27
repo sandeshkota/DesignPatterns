@@ -9,7 +9,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern.Commands
     public class IncreaseBrightnessCommand : ICommand
     {
         private  const int STEPPER = 2;
-        private Photo _photo;
+        private readonly Photo _photo;
         public IncreaseBrightnessCommand(Photo photo)
         {
             this._photo = photo;

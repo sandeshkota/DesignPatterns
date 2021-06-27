@@ -12,7 +12,6 @@ namespace DesignPatterns.BehavioralPatterns.TemplateMethodPattern
             get {
                 return ErrorMessages.Count > 0;
             } 
-            private set { } 
         }
 
         public List<string> ErrorMessages { get; set; } = new List<string>();

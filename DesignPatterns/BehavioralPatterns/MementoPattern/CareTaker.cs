@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.MementoPattern
 {
     public class CareTaker
     {
-        private List<Memento> _history = new();
+        private readonly List<Memento> _history = new();
 
         public void AddMemento(Memento memento)
         {

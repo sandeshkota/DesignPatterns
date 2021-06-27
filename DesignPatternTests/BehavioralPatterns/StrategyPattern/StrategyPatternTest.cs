@@ -96,7 +96,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             return allData.Take(numTests);
         }
 
-        private IRatingStrategy GetRatingStrategy(string ratingAgencyName)
+        private static IRatingStrategy GetRatingStrategy(string ratingAgencyName)
         {
             switch (ratingAgencyName.ToUpper())
             {
@@ -113,7 +113,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             }
         }
 
-        private IInterestRateStrategy GetInterestRateStrategy(string interestRateBand)
+        private static IInterestRateStrategy GetInterestRateStrategy(string interestRateBand)
         {
             switch (interestRateBand.ToUpper())
             {
@@ -124,7 +124,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             }
         }
 
-        private IDiscountStrategy GetDiscountStrategy(string discountStrategyName)
+        private static IDiscountStrategy GetDiscountStrategy(string discountStrategyName)
         {
             switch (discountStrategyName.ToUpper())
             {

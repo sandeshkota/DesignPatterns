@@ -9,7 +9,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern
 {
     public class EditorCommandHistory
     {
-        private List<ICommand> _commandHistory;
+        private readonly List<ICommand> _commandHistory;
         public EditorCommandHistory()
         {
             _commandHistory = new List<ICommand>();
