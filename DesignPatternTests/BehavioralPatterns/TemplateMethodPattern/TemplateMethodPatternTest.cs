@@ -28,10 +28,26 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
 
         [Fact]
         [Trait("Pattern", "Behavioral")]
-        public void User_Save_Failure_Test()
+        public void User_Save_Small_Name_Failure_Test()
         {
             // arrange
             var user = new User { Name = "SK" };
+
+            // act
+            user.Save();
+
+            // assert
+            Assert.NotEqual("India", user.Location);
+            Assert.False(user.IsSaved, "user saved with only 4 characters");
+            Assert.True(user.Id == default || user.Id <= 0, "User Id is set even when save failed");
+        }
+
+        [Fact]
+        [Trait("Pattern", "Behavioral")]
+        public void User_Save_Null_Name_Failure_Test()
+        {
+            // arrange
+            var user = new User();
 
             // act
             user.Save();
