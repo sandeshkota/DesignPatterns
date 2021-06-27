@@ -283,6 +283,9 @@ namespace DesignPatterns
 
             var product = new Product { Name = "Phone", Price = 100.00 };
             product.Save();
+
+            var profile = new Profile();
+            profile.Save();
         }
 
         public static void StrategyPattern()

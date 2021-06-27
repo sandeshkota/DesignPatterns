@@ -210,5 +210,48 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
             // assert
             Assert.Null(firstBackup);
         }
+
+        [Fact]
+        [Trait("Pattern", "Behavioral")]
+        public void Memento_Restore_By_Memnto_Object_Test()
+        {
+            // arrange
+            var originator = new Originator();
+            var careTaker = new CareTaker();
+
+            var photograph = new Photograph();
+            photograph.BrightnessLevel += 20;
+            photograph.AddFilter("VIVID");
+
+            // act
+            originator.SetPhotograph(photograph);
+            originator.SaveToMemento(photograph);
+
+            photograph.AddFilter("NATURE");
+            var firstmemento = originator.SaveToMemento(photograph);
+            careTaker.AddMemento(firstmemento);
+
+            photograph.AddFilter("SNOWFALL");
+            photograph.AddFilter("AUTUMN");
+            var secondMemento = originator.SaveToMemento(photograph);
+            careTaker.AddMemento(secondMemento);
+
+            var firstPhotograph = originator.RestroreFromMemento(firstmemento);
+
+            var secondPhotograph = originator.RestroreFromMemento(secondMemento);
+
+            // assert
+            Assert.Equal(70, firstPhotograph.BrightnessLevel);
+            Assert.Equal(2, firstPhotograph.GetFilters().Count);
+            Assert.Contains("VIVID", firstPhotograph.GetFilters());
+            Assert.Contains("NATURE", firstPhotograph.GetFilters());
+
+            Assert.Equal(70, secondPhotograph.BrightnessLevel);
+            Assert.Equal(4, secondPhotograph.GetFilters().Count);
+            Assert.Contains("VIVID", secondPhotograph.GetFilters());
+            Assert.Contains("NATURE", secondPhotograph.GetFilters());
+            Assert.Contains("SNOWFALL", secondPhotograph.GetFilters());
+            Assert.Contains("AUTUMN", secondPhotograph.GetFilters());
+        }
     }
 }

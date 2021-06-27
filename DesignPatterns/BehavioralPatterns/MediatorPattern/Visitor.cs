@@ -36,11 +36,6 @@ namespace DesignPatterns.BehavioralPatterns.MediatorPattern
 
         public void Enter(IChatRoom chatRoom)
         {
-            if(_chatRoom != null)
-            {
-                Leave();
-            }
-
             chatRoom.Register(this);
             _chatRoom = chatRoom;
         }

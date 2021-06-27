@@ -6,7 +6,7 @@ namespace DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies
     {
         public double GetDiscount(string rating)
         {
-            switch (rating)
+            switch (rating.ToUpper())
             {
                 case "AAA":
                     return 0.20;

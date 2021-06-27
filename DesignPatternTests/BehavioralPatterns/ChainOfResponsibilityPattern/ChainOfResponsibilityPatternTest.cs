@@ -76,6 +76,7 @@ namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
             var cfo = new ChiefFinancialOfficer();
             teamLeader.SetNextReimburser(manager);
             manager.SetNextReimburser(cfo);
+            cfo.SetNextReimburser(null);
 
             // act
             teamLeader.Reimburse(1001);
@@ -85,6 +86,7 @@ namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
             Assert.False(manager.HasReimbursed);
             Assert.False(cfo.HasReimbursed);
         }
+
     }
 
 }

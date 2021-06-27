@@ -71,5 +71,19 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
             Assert.False(product.IsSaved, "user saved with only 4 characters");
             Assert.True(product.Id == default || product.Id <= 0, "Product Id is set even when save failed");
         }
+
+        [Fact]
+        [Trait("Pattern", "Behavioral")]
+        public void Profile_Save_Test()
+        {
+            // arrange
+            var profile = new Profile { Description = "" };
+
+            // act
+            profile.Save();
+
+            // assert
+            Assert.True(profile.IsSaved, "Profile saved successfully");
+        }
     }
 }
