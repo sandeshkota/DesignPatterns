@@ -30,14 +30,18 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
             // assert
-            Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
+            Assert.Equal(expectedInterestRate, customerInterestRate);
         }
 
         [Theory]
-        [InlineData("Default", 5.4)]
-        [InlineData("High", 5.85)]
+        [InlineData("Default", "Home", 5.4)]
+        [InlineData("High", "Home", 5.85)]
+        [InlineData("Default", "Vehicle", 6.3)]
+        [InlineData("High", "Vehicle", 6.75)]
+        [InlineData("Default", "Land", 7.2)]
+        [InlineData("High", "Land", 7.2)]
         [Trait("Pattern", "Behavioral")]
-        public void Customer_Interest_Rate_Test(string interestRateBand, double expectedInterestRate)
+        public void Customer_Interest_Rate_Test(string interestRateBand, string typeOfLoan, double expectedInterestRate)
         {
             // arrange
             var customerService = new CustomerService();
@@ -46,11 +50,11 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             customerService.SetDiscountStrategy(GetDiscountStrategy(String.Empty));
 
             // act
-            var customerInterestRate = customerService.GetInterestRate(123, "Home");
+            var customerInterestRate = customerService.GetInterestRate(123, typeOfLoan);
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
             // assert
-            Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
+            Assert.Equal(expectedInterestRate, customerInterestRate);
         }
 
         [Theory]
@@ -69,7 +73,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
             customerInterestRate = Math.Round(customerInterestRate, 2);
 
             // assert
-            Assert.True(customerInterestRate == expectedInterestRate, $"The rating logic is not correct");
+            Assert.Equal(expectedInterestRate, customerInterestRate);
         }
 
 
@@ -79,7 +83,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
                new List<object[]>
                {
                     new object[] { "Moody", 5.4 },
-                    new object[] { "Sicra", 5.7 },
+                    new object[] { "Sicra", 6 },
                     new object[] { "Fitch", 4.8 },
                     new object[] { "Crisil", 5.7 },
                };

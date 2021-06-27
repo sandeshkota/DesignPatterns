@@ -152,6 +152,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             {
                 // arrange
                 var account = new Account("1900675342", "BANK000765", 100.00);
+                account.ChangeToClosedState();
 
                 // act
                 account.ChangeToClosedState();
@@ -281,6 +282,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             {
                 // arrange
                 var account = new Account("1900675342", "BANK000765", 100.00);
+                account.ChangeToWithheldState();
 
                 // act
                 account.ChangeToWithheldState();

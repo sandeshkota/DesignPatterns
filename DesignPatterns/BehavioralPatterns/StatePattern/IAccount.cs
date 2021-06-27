@@ -14,7 +14,6 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
 
         string GetAccountType();
 
-        string GetAccountDetails();
         double GetAccountBalance();
 
         void ChangeToOpenedState();

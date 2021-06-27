@@ -46,11 +46,6 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
             return this._balance;
         }
 
-        public string GetAccountDetails()
-        {
-            return $"Account Number: {this._number} | Balance: {this.GetAccountBalance()} | IFSC: {this._ifscCode}";
-        }
-        
         public void ChangeToOpenedState()
         {
             this._accountState.MoveToOpenedState();

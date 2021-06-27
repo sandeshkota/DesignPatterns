@@ -6,11 +6,11 @@ namespace DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies
     {
         public double GetInterestRate(string typeOfLoan)
         {
-            switch (typeOfLoan)
+            switch (typeOfLoan.ToUpper())
             {
-                case "Home":
+                case "HOME":
                     return 1.00;
-                case "Vehicle":
+                case "VEHICLE":
                     return 2.00;
                 default:
                     return 3.00;

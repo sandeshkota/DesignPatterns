@@ -16,12 +16,6 @@ namespace DesignPatterns.BehavioralPatterns.MementoPattern
             this._photograph = photograph;
         }
 
-        public Photograph GetPhotograph()
-        {
-            return this._photograph;
-        }
-
-
         public Memento SaveToMemento(Photograph photograph)
         {
             return new Memento(photograph.BrightnessLevel, photograph.GetFilters());
