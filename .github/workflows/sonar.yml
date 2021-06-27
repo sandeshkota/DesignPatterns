@@ -9,6 +9,10 @@ on:
       - '.github/**'
   pull_request:
     types: [opened, synchronize, reopened]
+    paths-ignore:
+      - '**.md'
+      - 'Assets/**'
+      - '.github/**'
     
 jobs:
   build:
