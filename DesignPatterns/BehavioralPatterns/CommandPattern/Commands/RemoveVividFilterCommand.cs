@@ -17,7 +17,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern.Commands
 
         public void Execute()
         {
-            if (this._photo.Filters != null && this._photo.Filters.Contains(FILTER))
+            if (this._photo.Filters.Contains(FILTER))
             {
                 this._photo.Filters.Remove(FILTER);
                 Console.WriteLine($"{FILTER} is removed from the photo");
@@ -27,7 +27,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern.Commands
 
         public void UnExecute()
         {
-            if (this._photo.Filters != null && !this._photo.Filters.Contains(FILTER))
+            if (!this._photo.Filters.Contains(FILTER))
             {
                 this._photo.Filters.Add(FILTER);
                 Console.WriteLine($"Removed {FILTER} is added to the photo");

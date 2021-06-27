@@ -1,7 +1,8 @@
 ﻿using Xunit;
+using System;
+using Xunit.Abstractions;
 using DesignPatterns.BehavioralPatterns.CommandPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
-using Xunit.Abstractions;
 
 namespace DesignPatternTests.BehavioralPatterns.CommandPattern
 {
@@ -245,7 +246,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
 
         [Fact]
         [Trait("Pattern", "Behavioral")]
-        public void Undo_Test()
+        public void Undo_Success_Test()
         {
             // arrange
             var vividFilter = "VIVID";
@@ -277,6 +278,32 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel, photo.BrightnessLevel);
             Assert.DoesNotContain(vividFilter, photo.Filters);
+        }
+
+
+        [Fact]
+        [Trait("Pattern", "Behavioral")]
+        public void Undo_Fail_Test()
+        {
+            // arrange
+            var photo = new Photo();
+            var currentBrightnessLevel = photo.BrightnessLevel;
+            var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
+            var decreaseBrightnessCommand = new DecreaseBrightnessCommand(photo);
+            var addVividFilterCommand = new AddVividFilterCommand(photo);
+            var removeVividFilterCommand = new RemoveVividFilterCommand(photo);
+            var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
+                                                addVividFilterCommand, removeVividFilterCommand);
+
+            photoEditor.IncreaseBrightness();
+            photoEditor.Undo();
+            Action undoChanges = () => photoEditor.Undo();
+
+            // act (+assert)
+            var exception = Assert.Throws<InvalidOperationException>(undoChanges);
+
+            // assert
+            Assert.Equal("There are no more operations to Undo", exception.Message);
         }
     }
 }

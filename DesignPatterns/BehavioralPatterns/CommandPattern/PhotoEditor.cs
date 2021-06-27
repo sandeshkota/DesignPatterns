@@ -60,7 +60,7 @@ namespace DesignPatterns.BehavioralPatterns.CommandPattern
                 lastCommand.UnExecute();
             } else
             {
-                Console.WriteLine("There are no commands to Undo");
+                throw new InvalidOperationException("There are no more operations to Undo");
             }
             
         }

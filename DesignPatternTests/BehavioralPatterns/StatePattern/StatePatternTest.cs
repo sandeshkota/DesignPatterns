@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
+using System;
 using DesignPatterns.BehavioralPatterns.StatePattern;
 
 namespace DesignPatternTests.BehavioralPatterns.StatePattern
@@ -14,6 +10,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
         public class OpenedAccountStatePatternTest
         {
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Add_Money_Test()
             {
                 // arrange
@@ -27,6 +24,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Get_Money_Success_Test()
             {
                 // arrange
@@ -41,6 +39,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Get_Money_Failure_Test()
             {
                 // arrange
@@ -55,6 +54,21 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
+            public void Opened_Account_To_Opened_Account_Test()
+            {
+                // arrange
+                var account = new Account("1900675342", "BANK000765", 100.00);
+
+                // act
+                account.ChangeToOpenedState();
+
+                // assert
+                Assert.Equal("OPENED", account.GetAccountType());
+            }
+
+            [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_To_Closed_Account_Test()
             {
                 // arrange
@@ -68,6 +82,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_To_Withheld_Account_Test()
             {
                 // arrange
@@ -85,6 +100,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
         {
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_Add_Money_Test()
             {
                 // arrange
@@ -100,6 +116,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_Get_Money_Test()
             {
                 // arrange
@@ -115,6 +132,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_To_Opened_Account_Test()
             {
                 // arrange
@@ -129,6 +147,22 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
+            [Trait("Pattern", "Behavioral")]
+            public void Closed_Account_To_Closed_Account_Test()
+            {
+                // arrange
+                var account = new Account("1900675342", "BANK000765", 100.00);
+
+                // act
+                account.ChangeToClosedState();
+
+                // assert
+                Assert.Equal("CLOSED", account.GetAccountType());
+            }
+
+
+            [Fact]
+            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_To_Withheld_Account_Test()
             {
                 // arrange
@@ -239,6 +273,20 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
 
                 // assert
                 Assert.Equal("CLOSED", account.GetAccountType());
+            }
+
+            [Fact]
+            [Trait("Pattern", "Behavioral")]
+            public void Withheld_Account_To_Withheld_Account_Test()
+            {
+                // arrange
+                var account = new Account("1900675342", "BANK000765", 100.00);
+
+                // act
+                account.ChangeToWithheldState();
+
+                // assert
+                Assert.Equal("WITHHELD", account.GetAccountType());
             }
 
         }
