@@ -53,3 +53,16 @@ Having any issues or troubles getting started? Drop a mail to sandeshjkota@gmail
 ## Build Status
 [![CodeQL](https://github.com/sandeshkota/DesignPatterns/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sandeshkota/DesignPatterns/actions/workflows/codeql-analysis.yml)
 [![Sonar](https://github.com/sandeshkota/DesignPatterns/actions/workflows/sonar.yml/badge.svg)](https://github.com/sandeshkota/DesignPatterns/actions/workflows/sonar.yml)
+
+## Sonar Status
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=ncloc)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=security_rating)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=coverage)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=sqale_index)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=code_smells)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=bugs)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=alert_status)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
