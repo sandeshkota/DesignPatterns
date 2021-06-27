@@ -11,6 +11,7 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
     public class MementoPatternTest
     {
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Memento_Single_Backup_Test()
         {
             var originator = new Originator();
@@ -37,6 +38,7 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Memento_Double_Backup_Test()
         {
             var originator = new Originator();
@@ -78,6 +80,7 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Memento_Multi_Backup_Test()
         {
             var originator = new Originator();
@@ -133,6 +136,7 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Memento_No_Backup_Test()
         {
             var originator = new Originator();
@@ -161,6 +165,7 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Memento_Loading_More_Backup_Test()
         {
             var originator = new Originator();

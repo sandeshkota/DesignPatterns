@@ -11,6 +11,7 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
     public class TemplateMethodPatternTest
     {
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void User_Save_Success_Test()
         {
             // arrange
@@ -26,6 +27,7 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void User_Save_Failure_Test()
         {
             // arrange
@@ -41,6 +43,7 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Product_Save_Success_Test()
         {
             // arrange
@@ -55,6 +58,7 @@ namespace DesignPatternTests.BehavioralPatterns.TemplateMethodPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Product_Save_Failure_Test()
         {
             // arrange

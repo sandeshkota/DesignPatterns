@@ -10,6 +10,7 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
     public class VisitorPatternTest
     {
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Bronze_CreditCard_Test()
         {
             // arrange
@@ -29,6 +30,7 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Silver_CreditCard_Test()
         {
             // arrange
@@ -47,6 +49,7 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Gold_CreditCard_Test()
         {
             // arrange
@@ -64,8 +67,8 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
             Assert.Equal(30, totalPoints);
         }
 
-
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Gas_Offer_Test()
         {
             // arrange
@@ -87,6 +90,7 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Hotel_Offer_Test()
         {
             // arrange
@@ -108,6 +112,7 @@ namespace DesignPatternTests.BehavioralPatterns.VisitorPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Silver_CreditCard_Hotel_And_Gold_CreditCard_Gas_Offer_Test()
         {
             // arrange

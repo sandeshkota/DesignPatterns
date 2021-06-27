@@ -14,6 +14,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Increase_Test()
         {
             var photo = new Photo();
@@ -32,6 +33,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Decrease_Test()
         {
             var photo = new Photo();
@@ -50,6 +52,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Test()
         {
             var photo = new Photo();
@@ -71,6 +74,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Add_Vivid_Filter_Test()
         {
             var vividFilter = "VIVID";
@@ -88,6 +92,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Remove_Vivid_Filter_Test()
         {
             var vividFilter = "VIVID";
@@ -106,6 +111,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Increase_Undo_Test()
         {
             var photo = new Photo();
@@ -125,6 +131,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Decrease_Undo_Test()
         {
             var photo = new Photo();
@@ -145,6 +152,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Brightness_Undo_Test()
         {
             var photo = new Photo();
@@ -166,6 +174,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Vivid_Filter_Undo_Test()
         {
             var vividFilter = "VIVID";
@@ -184,6 +193,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Vivid_Undo_Test()
         {
             var vividFilter = "VIVID";
@@ -204,6 +214,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
 
 
         [Fact]
+        [Trait("Pattern", "Behavioral")]
         public void Undo_Test()
         {
             var vividFilter = "VIVID";

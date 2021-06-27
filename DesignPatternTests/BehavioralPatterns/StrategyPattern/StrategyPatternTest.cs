@@ -6,6 +6,8 @@ using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategy;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategy;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
@@ -13,10 +15,8 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
     public class StrategyPatternTest
     {
         [Theory]
-        [InlineData("Moody", 5.4)]
-        [InlineData("Sicra", 5.7)]
-        [InlineData("Fitch", 4.8)]
-        [InlineData("Crisil", 5.7)]
+        [MemberData(nameof(RatingAgencyData))]
+        [Trait("Pattern", "Behavioral")]
         public void Customer_Rating_Agency_Test(string ratingAgencyName, double expectedInterestRate)
         {
             // arrange
@@ -36,6 +36,7 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         [Theory]
         [InlineData("Default", 5.4)]
         [InlineData("High", 5.85)]
+        [Trait("Pattern", "Behavioral")]
         public void Customer_Interest_Rate_Test(string interestRateBand, double expectedInterestRate)
         {
             // arrange
@@ -53,9 +54,8 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         }
 
         [Theory]
-        [InlineData("Home", 5.4)]
-        [InlineData("Vehicle", 6.3)]
-        [InlineData("Land", 7.2)]
+        [MemberData(nameof(GetLoanTypeData), parameters:3)]
+        [Trait("Pattern", "Behavioral")]
         public void Customer_Loan_Type_Test(string typeOfLoan, double expectedInterestRate)
         {
             // arrange
@@ -74,6 +74,28 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
 
 
         #region Private Methods
+
+        public static IEnumerable<object[]> RatingAgencyData =>
+               new List<object[]>
+               {
+                    new object[] { "Moody", 5.4 },
+                    new object[] { "Sicra", 5.7 },
+                    new object[] { "Fitch", 4.8 },
+                    new object[] { "Crisil", 5.7 },
+               };
+
+        public static IEnumerable<object[]> GetLoanTypeData(int numTests)
+        {
+            var allData = new List<object[]>
+            {
+                new object[] { "Home", 5.4 },
+                new object[] { "Vehicle", 6.3 },
+                new object[] { "Land", 7.2 }
+            };
+
+            return allData.Take(numTests);
+        }
+
         private IRatingStrategy GetRatingStrategy(string ratingAgencyName)
         {
             switch (ratingAgencyName.ToUpper())
