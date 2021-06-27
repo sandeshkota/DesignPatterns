@@ -3,6 +3,10 @@ name: Sonar
 on:
   push:
     branches: [ master, main ]
+    paths-ignore:
+      - '**.md'
+      - 'Assets/**'
+      - '.github/**'
   pull_request:
     types: [opened, synchronize, reopened]
     
