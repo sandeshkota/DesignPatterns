@@ -16,6 +16,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Brightness_Increase_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -25,8 +26,10 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.IncreaseBrightness();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel + 2} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel + 2, photo.BrightnessLevel);
         }
@@ -34,6 +37,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Brightness_Decrease_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -43,8 +47,10 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.DecreaseBrightness();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel - 2} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel - 2, photo.BrightnessLevel);
         }
@@ -52,6 +58,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Brightness_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -61,11 +68,13 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.IncreaseBrightness();
             photoEditor.DecreaseBrightness();
             photoEditor.IncreaseBrightness();
             photoEditor.IncreaseBrightness();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel + 4} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel + 4, photo.BrightnessLevel);
         }
@@ -73,6 +82,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Add_Vivid_Filter_Test()
         {
+            // arrange
             var vividFilter = "VIVID";
             var photo = new Photo();
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -82,14 +92,17 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.AddVividFilter();
 
+            // assert
             Assert.Contains(vividFilter, photo.Filters);
         }
 
         [Fact]
         public void Remove_Vivid_Filter_Test()
         {
+            // arrange
             var vividFilter = "VIVID";
             var photo = new Photo();
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -99,15 +112,18 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.AddVividFilter();
             photoEditor.RemoveVividFilter();
 
+            // assert
             Assert.DoesNotContain(vividFilter, photo.Filters);
         }
 
         [Fact]
         public void Brightness_Increase_Undo_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -117,9 +133,11 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.IncreaseBrightness();
             photoEditor.Undo();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel, photo.BrightnessLevel);
         }
@@ -127,6 +145,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Brightness_Decrease_Undo_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -136,10 +155,12 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.DecreaseBrightness();
             photoEditor.DecreaseBrightness();
             photoEditor.Undo();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel - 2} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel-2, photo.BrightnessLevel);
         }
@@ -147,6 +168,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Brightness_Undo_Test()
         {
+            // arrange
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -156,11 +178,13 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.IncreaseBrightness();
             photoEditor.IncreaseBrightness();
             photoEditor.DecreaseBrightness();
             photoEditor.Undo();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel + 4} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel + 4, photo.BrightnessLevel);
         }
@@ -168,6 +192,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Vivid_Filter_Undo_Test()
         {
+            // arrange
             var vividFilter = "VIVID";
             var photo = new Photo();
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -177,15 +202,18 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.AddVividFilter();
             photoEditor.Undo();
 
+            // assert
             Assert.DoesNotContain(vividFilter, photo.Filters);
         }
 
         [Fact]
         public void Vivid_Undo_Test()
         {
+            // arrange
             var vividFilter = "VIVID";
             var photo = new Photo();
             var increaseBrightnessCommand = new IncreaseBrightnessCommand(photo);
@@ -195,10 +223,12 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.AddVividFilter();
             photoEditor.RemoveVividFilter();
             photoEditor.Undo();
 
+            // assert
             Assert.Contains(vividFilter, photo.Filters);
         }
 
@@ -206,6 +236,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         [Fact]
         public void Undo_Test()
         {
+            // arrange
             var vividFilter = "VIVID";
             var photo = new Photo();
             var currentBrightnessLevel = photo.BrightnessLevel;
@@ -216,6 +247,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             var photoEditor = new PhotoEditor(increaseBrightnessCommand, decreaseBrightnessCommand,
                                                 addVividFilterCommand, removeVividFilterCommand);
 
+            // act
             photoEditor.IncreaseBrightness();
             photoEditor.IncreaseBrightness();
             photoEditor.DecreaseBrightness();
@@ -230,6 +262,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             photoEditor.Undo();
             photoEditor.Undo();
 
+            // assert
             this.output.WriteLine($"Expected Brightness level is {currentBrightnessLevel} & Actual Brightness level is {photo.BrightnessLevel}");
             Assert.Equal(currentBrightnessLevel, photo.BrightnessLevel);
             Assert.DoesNotContain(vividFilter, photo.Filters);
