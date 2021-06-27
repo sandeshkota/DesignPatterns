@@ -31,7 +31,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - [Mediator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MediatorPattern)
   - [Memento Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/MementoPattern)
   - [Observer Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ObserverPattern)
-  - State Pattern
+  - [State Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/StatePattern)
   - [Strategy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/StrategyPattern)
   - [Template Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/TemplateMethodPattern)
   - [Visitor Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/VisitorPattern)
@@ -49,3 +49,7 @@ If you have found this project helpful, either as a library that you use or as a
 ## Contact
 
 Having any issues or troubles getting started? Drop a mail to sandeshjkota@gmail.com or [Raise a Bug or Feature Request](https://github.com/sandeshkota/DesignPatterns/issues). Always happy to help.
+
+## Build Status
+[![CodeQL](https://github.com/sandeshkota/DesignPatterns/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sandeshkota/DesignPatterns/actions/workflows/codeql-analysis.yml)
+[![Sonar](https://github.com/sandeshkota/DesignPatterns/actions/workflows/sonar.yml/badge.svg)](https://github.com/sandeshkota/DesignPatterns/actions/workflows/sonar.yml)
