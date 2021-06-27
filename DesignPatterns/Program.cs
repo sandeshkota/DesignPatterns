@@ -14,6 +14,8 @@ using DesignPatterns.BehavioralPatterns.IteratorPattern;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 using DesignPatterns.BehavioralPatterns.MementoPattern;
+using DesignPatterns.BehavioralPatterns.StatePattern;
+
 
 namespace DesignPatterns
 {
@@ -21,7 +23,6 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            MementoPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -30,6 +31,49 @@ namespace DesignPatterns
         }
 
         #region BEHAVIOR PATTERNS
+
+        public static void StatePattern()
+        {
+            var account = new Account("1900675342", "BANK000765", 100.00);
+            Console.WriteLine($"Intitial Balance: {account.GetAccountBalance()}");
+            account.AddMoney(200);
+            Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            account.GetMoney(50);
+            Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            account.ChangeToWithheldState();
+            account.AddMoney(500);
+            Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            account.GetMoney(50);
+            Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            try
+            {
+                account.GetMoney(250);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            }
+            account.ChangeToClosedState();
+            try
+            {
+                account.AddMoney(1000);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            }
+            try
+            {
+                account.GetMoney(10);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Balance: {account.GetAccountBalance()}");
+            }
+        }
 
         public static void MementoPattern()
         {
