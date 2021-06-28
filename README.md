@@ -20,7 +20,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
 
 ## Classification
 - Creational Patterns
-  - Factory Method Pattern
+  - [Factory Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/FactoryMethodPattern)
   - Abstract Factory Pattern
   - Builder Pattern
   - Prototype Pattern
