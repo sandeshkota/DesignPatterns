@@ -1,8 +1,8 @@
 
 <h1 align="center">
-  <br>
+  <br />
     Desgin Patterns
-  <br>
+  <br />
 </h1>
 
 Design Patterns are general, reusable solutions to commonn problems in Software Desing. 
@@ -10,11 +10,8 @@ Each Pattern is like a blue print which can(should) be customized based on the n
 <br />
 Pattern is not a code that you can refer in your project. It is more of a concept which should be customized based on the need and adopted in your project.
 
-<h1>
-  <br>
-    History
-  <br>
-</h1>
+
+## History
 Patterns as a concept gained popularity after the book **Design Patterns: Elements of reusable Object Oriented Software** 
 was published in 1994 by four authors who are famously called as **Gang Of Four**
 
