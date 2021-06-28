@@ -12,11 +12,11 @@ using Xunit;
 
 namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class StrategyPatternTest
     {
         [Theory]
         [MemberData(nameof(RatingAgencyData))]
-        [Trait("Pattern", "Behavioral")]
         public void Customer_Rating_Agency_Test(string ratingAgencyName, double expectedInterestRate)
         {
             // arrange
@@ -40,7 +40,6 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
         [InlineData("High", "Vehicle", 6.75)]
         [InlineData("Default", "Land", 7.2)]
         [InlineData("High", "Land", 7.2)]
-        [Trait("Pattern", "Behavioral")]
         public void Customer_Interest_Rate_Test(string interestRateBand, string typeOfLoan, double expectedInterestRate)
         {
             // arrange
@@ -59,7 +58,6 @@ namespace DesignPatternTests.BehavioralPatterns.StrategyPattern
 
         [Theory]
         [MemberData(nameof(GetLoanTypeData), parameters:3)]
-        [Trait("Pattern", "Behavioral")]
         public void Customer_Loan_Type_Test(string typeOfLoan, double expectedInterestRate)
         {
             // arrange

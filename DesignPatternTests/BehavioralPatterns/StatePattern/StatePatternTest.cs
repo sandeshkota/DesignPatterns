@@ -4,13 +4,13 @@ using DesignPatterns.BehavioralPatterns.StatePattern;
 
 namespace DesignPatternTests.BehavioralPatterns.StatePattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class StatePatternTest
     {
 
         public class OpenedAccountStatePatternTest
         {
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Add_Money_Test()
             {
                 // arrange
@@ -24,7 +24,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Get_Money_Success_Test()
             {
                 // arrange
@@ -39,7 +38,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_Get_Money_Failure_Test()
             {
                 // arrange
@@ -54,7 +52,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_To_Opened_Account_Test()
             {
                 // arrange
@@ -68,7 +65,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_To_Closed_Account_Test()
             {
                 // arrange
@@ -82,7 +78,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Opened_Account_To_Withheld_Account_Test()
             {
                 // arrange
@@ -100,7 +95,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
         {
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_Add_Money_Test()
             {
                 // arrange
@@ -116,7 +110,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_Get_Money_Test()
             {
                 // arrange
@@ -132,7 +125,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_To_Opened_Account_Test()
             {
                 // arrange
@@ -147,7 +139,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_To_Closed_Account_Test()
             {
                 // arrange
@@ -163,7 +154,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
 
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Closed_Account_To_Withheld_Account_Test()
             {
                 // arrange
@@ -184,7 +174,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
         {
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_Add_Money_Test()
             {
                 // arrange
@@ -199,7 +188,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_Get_Money_Success_Test()
             {
                 var account = new Account("1900675342", "BANK000765", 100.00);
@@ -214,7 +202,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_Get_Money_Withdraw_Limit_Failure_Test()
             {
                 // arrange
@@ -231,7 +218,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_Get_Money_Failure_Test()
             {
                 // arrange
@@ -247,7 +233,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_To_Opened_Account_Test()
             {
                 // arrange
@@ -262,7 +247,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_To_Closed_Account_Test()
             {
                 // arrange
@@ -277,7 +261,6 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
 
             [Fact]
-            [Trait("Pattern", "Behavioral")]
             public void Withheld_Account_To_Withheld_Account_Test()
             {
                 // arrange

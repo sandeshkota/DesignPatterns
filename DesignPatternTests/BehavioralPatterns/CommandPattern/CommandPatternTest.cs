@@ -6,6 +6,7 @@ using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 
 namespace DesignPatternTests.BehavioralPatterns.CommandPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class CommandPatternTest
     {
         private readonly ITestOutputHelper output;
@@ -15,7 +16,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Increase_Test()
         {
             // arrange
@@ -37,7 +37,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Decrease_Test()
         {
             // arrange
@@ -59,7 +58,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Test()
         {
             // arrange
@@ -84,7 +82,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Add_Vivid_Filter_Test()
         {
             // arrange
@@ -105,7 +102,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Remove_Vivid_Filter_Test()
         {
             // arrange
@@ -127,7 +123,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Increase_Undo_Test()
         {
             // arrange
@@ -150,7 +145,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Decrease_Undo_Test()
         {
             // arrange
@@ -174,7 +168,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Brightness_Undo_Test()
         {
             // arrange
@@ -199,7 +192,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Vivid_Filter_Undo_Test()
         {
             // arrange
@@ -221,7 +213,6 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Vivid_Undo_Test()
         {
             // arrange
@@ -243,9 +234,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             Assert.Contains(vividFilter, photo.Filters);
         }
 
-
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Undo_Success_Test()
         {
             // arrange
@@ -280,9 +269,7 @@ namespace DesignPatternTests.BehavioralPatterns.CommandPattern
             Assert.DoesNotContain(vividFilter, photo.Filters);
         }
 
-
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Undo_Fail_Test()
         {
             // arrange
