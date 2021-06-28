@@ -4,10 +4,9 @@ using DesignPatterns.BehavioralPatterns.StatePattern;
 
 namespace DesignPatternTests.BehavioralPatterns.StatePattern
 {
-    [Trait("Pattern", "Behavioral")]
     public class StatePatternTest
     {
-
+        [Trait("Pattern", "Behavioral")]
         public class OpenedAccountStatePatternTest
         {
             [Fact]
@@ -91,6 +90,8 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
             }
         }
 
+
+        [Trait("Pattern", "Behavioral")]
         public class ClosedAccountStatePatternTest
         {
 
@@ -170,6 +171,7 @@ namespace DesignPatternTests.BehavioralPatterns.StatePattern
 
         }
 
+        [Trait("Pattern", "Behavioral")]
         public class WithheldAccountStatePatternTest
         {
 
