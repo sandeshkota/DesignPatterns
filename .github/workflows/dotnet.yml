@@ -35,3 +35,6 @@ jobs:
       
     - name: Test
       run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=json,cobertura,opencover
+
+    - name: Run Codacy Analysis CLI
+      uses: codacy/codacy-analysis-cli-action@master
