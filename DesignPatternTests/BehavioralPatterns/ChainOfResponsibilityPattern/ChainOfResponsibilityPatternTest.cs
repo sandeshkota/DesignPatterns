@@ -4,10 +4,10 @@ using System;
 
 namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class ChainOfResponsibilityPatternTest
     {
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void TeamLeader_Reimburse_Success_Test()
         {
             // arrange
@@ -27,7 +27,6 @@ namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Manager_Reimburse_Success_Test()
         {
             // arrange
@@ -47,7 +46,6 @@ namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void CFO_Reimburse_Success_Test()
         {
             // arrange
@@ -67,7 +65,6 @@ namespace DesignPatternTests.BehavioralPatterns.ChainOfResponsibilityPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Reimburse_Failure_Test()
         {
             // arrange

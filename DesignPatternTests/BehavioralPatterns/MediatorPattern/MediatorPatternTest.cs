@@ -3,10 +3,10 @@ using Xunit;
 
 namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class MediatorPatternTest
     {
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void OneWay_Chat_Test()
         {
             // arrange
@@ -27,7 +27,6 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void TwoWay_Chat_Test()
         {
             // arrange
@@ -52,7 +51,6 @@ namespace DesignPatternTests.BehavioralPatterns.MediatorPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Leave_Chat_Test()
         {
             // arrange

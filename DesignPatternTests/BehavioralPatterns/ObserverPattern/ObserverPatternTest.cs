@@ -4,10 +4,10 @@ using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 
 namespace DesignPatternTests.BehavioralPatterns.ObserverPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class ObserverPatternTest
     {
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Exception_Two_Observer_Test()
         {
             // arrange
@@ -26,7 +26,6 @@ namespace DesignPatternTests.BehavioralPatterns.ObserverPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Exception_Single_Observer_Test()
         {
             // arrange
@@ -44,7 +43,6 @@ namespace DesignPatternTests.BehavioralPatterns.ObserverPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Exception_No_Observer_Test()
         {
             // arrange
@@ -61,7 +59,6 @@ namespace DesignPatternTests.BehavioralPatterns.ObserverPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Exception_UnRegister_Test()
         {
             // arrange
@@ -81,7 +78,6 @@ namespace DesignPatternTests.BehavioralPatterns.ObserverPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Exception_All_UnRegister_Test()
         {
             // arrange

@@ -8,10 +8,10 @@ using DesignPatterns.BehavioralPatterns.MementoPattern;
 
 namespace DesignPatternTests.BehavioralPatterns.MementoPattern
 {
+    [Trait("Pattern", "Behavioral")]
     public class MementoPatternTest
     {
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_Single_Backup_Test()
         {
             // arrange
@@ -41,7 +41,6 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_Double_Backup_Test()
         {
             // arrange
@@ -86,7 +85,6 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_Multi_Backup_Test()
         {
             // arrange
@@ -145,7 +143,6 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_No_Backup_Test()
         {
             // arrange
@@ -177,7 +174,6 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_Loading_More_Backup_Test()
         {
             // arrange
@@ -212,7 +208,6 @@ namespace DesignPatternTests.BehavioralPatterns.MementoPattern
         }
 
         [Fact]
-        [Trait("Pattern", "Behavioral")]
         public void Memento_Restore_By_Memnto_Object_Test()
         {
             // arrange
