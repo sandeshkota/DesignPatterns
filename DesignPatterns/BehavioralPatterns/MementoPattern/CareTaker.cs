@@ -18,7 +18,7 @@ namespace DesignPatterns.BehavioralPatterns.MementoPattern
         public Memento GetMemento(int index)
         {
             if (this._history.Count == 0)
-                return default;
+                return null;
 
             return this._history.Count > index ? this._history[index] : default;
         }
