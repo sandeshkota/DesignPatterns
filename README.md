@@ -72,3 +72,7 @@ Having any issues or troubles getting started? Drop a mail to sandeshjkota@gmail
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=code_smells)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=bugs)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sandeshkota_DesignPatterns&metric=alert_status)](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+
+## Links
+- [Sonar](https://sonarcloud.io/dashboard?id=sandeshkota_DesignPatterns)
+- [Codacy](https://app.codacy.com/gh/sandeshkota/DesignPatterns/dashboard?branch=main)
