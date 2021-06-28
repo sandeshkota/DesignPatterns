@@ -29,7 +29,7 @@ namespace DesignPatterns.BehavioralPatterns.IteratorPattern.Iterators
             else if (_iterator == 2)
                 return GetSecondAddress();
             else
-                return default;
+                return null;
         }
 
         public void MoveToNextAddress()

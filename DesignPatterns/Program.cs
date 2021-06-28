@@ -17,6 +17,9 @@ using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 using DesignPatterns.BehavioralPatterns.MementoPattern;
 using DesignPatterns.BehavioralPatterns.StatePattern;
 using System.Diagnostics.CodeAnalysis;
+using DesignPatterns.CreationalPatterns.FactoryMethodPattern;
+using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService;
+using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeFactory;
 
 namespace DesignPatterns
 {
@@ -31,6 +34,42 @@ namespace DesignPatterns
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
         }
+
+        #region CREATIONAL PATTERNS
+
+        public static void FactoryMethodPattern()
+        {
+            var simpleEmployeeFactory = new SimpleEmployeeFactory();
+            Console.WriteLine("----- SIMPLE FACTORY -----");
+            var permanentEmployeeService = simpleEmployeeFactory.GetEmployeeService(EmployeeType.PermanentEmployee);
+            PrintEmployee(permanentEmployeeService);
+            var contractEmployeeService = simpleEmployeeFactory.GetEmployeeService(EmployeeType.ContractEmployee);
+            PrintEmployee(contractEmployeeService);
+
+            Console.WriteLine();
+            Console.WriteLine("----- FACTORY METHOD -----");
+            var permanentEmployeeFactory = new PermanentEmployeeFactory();
+            var permanentEmployee = permanentEmployeeFactory.GetEmployee();
+            Console.WriteLine($"Employee Type: {permanentEmployee.EmployeeType} " +
+                                $"| Price/Hour: {permanentEmployee.HourlyPay} " +
+                                $"| Yearly Bonus: {permanentEmployee.YearlyBonus} "
+                                );
+
+            var contractEmployeeFactory = new ContractEmployeeFactory();
+            var contractEmployee = contractEmployeeFactory.GetEmployee();
+            Console.WriteLine($"Employee Type: {contractEmployee.EmployeeType} " +
+                                $"| Price/Hour: {contractEmployee.HourlyPay} " +
+                                $"| Food Allowance: {contractEmployee.FoodAllowance} "
+                                );
+        }
+
+        private static void PrintEmployee(BaseEmployeeService firstEmployee)
+        {
+            Console.WriteLine($"Employee Type: {firstEmployee.GetEmployeeType()} " +
+                                $"| Price/Hour: {firstEmployee.GetHourlyPrice()} ");
+        }
+
+        #endregion
 
         #region BEHAVIOR PATTERNS
 
@@ -149,7 +188,7 @@ namespace DesignPatterns
             customer.Address.Add("#01, First Street, Mysuru, Karnataka, India, 570001, 99889988");
             customer.Address.Add("#02, Second Street, Bengaluru, Karnataka, India, 560001, 77667766");
 
-            var employee = new Employee
+            var employee = new BehavioralPatterns.IteratorPattern.Employee
             {
                 Name = "Kota",
                 BuildingNumber1 = "#101",

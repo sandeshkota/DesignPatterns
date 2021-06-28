@@ -35,7 +35,7 @@ namespace DesignPatterns.BehavioralPatterns.IteratorPattern.Iterators
                 return address;
             }
 
-            return default;
+            return null;
         }
 
         public void MoveToNextAddress()
