@@ -20,6 +20,7 @@ using System.Diagnostics.CodeAnalysis;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeFactory;
+using DesignPatterns.CreationalPatterns.SingletonPattern;
 
 namespace DesignPatterns
 {
@@ -29,6 +30,7 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
@@ -36,6 +38,21 @@ namespace DesignPatterns
         }
 
         #region CREATIONAL PATTERNS
+
+        private static void SingletonPattern()
+        {
+            var configurationManager = ConfigurationManager.GetInstance();
+            Console.WriteLine(configurationManager.GetValue("database"));
+            configurationManager.Upsert("name", "kota");
+            Console.WriteLine(configurationManager.GetValue("name"));
+
+            var anotherConfigurationManager = ConfigurationManager.GetInstance();
+            Console.WriteLine(anotherConfigurationManager.GetValue("name"));
+
+            anotherConfigurationManager.Upsert("name", "sandesh");
+            Console.WriteLine(anotherConfigurationManager.GetValue("name"));
+            Console.WriteLine(configurationManager.GetValue("name"));
+        }
 
         public static void FactoryMethodPattern()
         {
@@ -62,7 +79,6 @@ namespace DesignPatterns
                                 $"| Food Allowance: {contractEmployee.FoodAllowance} "
                                 );
         }
-
         private static void PrintEmployee(BaseEmployeeService firstEmployee)
         {
             Console.WriteLine($"Employee Type: {firstEmployee.GetEmployeeType()} " +
