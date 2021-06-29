@@ -21,7 +21,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - Abstract Factory Pattern
   - Builder Pattern
   - Prototype Pattern
-  - Singleton Pattern
+  - [Singleton Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/SingletonPattern)
 - Structural Patterns
   - Adapter Pattern
   - Bridge Pattern
