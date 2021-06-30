@@ -18,7 +18,7 @@ namespace DesignPatternTests.CreationalPatterns.PrototypePattern
                 HouseNumber = "333",
                 Street = "Main Street",
                 City = "Bengaluru",
-                ZipCode = new ZipCode { Code = "ZC001" }
+                Contact = new Contact { CountryCode = "91", Number = "98765432" }
             };
 
             user.CopyResidentialAddressToCommunicationAddress();
@@ -26,7 +26,8 @@ namespace DesignPatternTests.CreationalPatterns.PrototypePattern
             Assert.Equal(user.ResidentialAddress.HouseNumber, user.CommunicationAddress.HouseNumber);
             Assert.Equal(user.ResidentialAddress.Street, user.CommunicationAddress.Street);
             Assert.Equal(user.ResidentialAddress.City, user.CommunicationAddress.City);
-            Assert.Equal(user.ResidentialAddress.ZipCode.Code, user.CommunicationAddress.ZipCode.Code);
+            Assert.Equal(user.ResidentialAddress.Contact.CountryCode, user.CommunicationAddress.Contact.CountryCode);
+            Assert.Equal(user.ResidentialAddress.Contact.Number, user.CommunicationAddress.Contact.Number);
         }
 
         [Fact]
@@ -40,19 +41,21 @@ namespace DesignPatternTests.CreationalPatterns.PrototypePattern
                 HouseNumber = "333",
                 Street = "Main Street",
                 City = "Bengaluru",
-                ZipCode = new ZipCode { Code = "ZC001" }
+                Contact = new Contact { CountryCode = "91", Number = "98765432" }
             };
 
             user.CopyResidentialAddressToCommunicationAddress();
             user.ResidentialAddress.HouseNumber = "4444";
             user.ResidentialAddress.Street = "Sub Street";
             user.ResidentialAddress.City = "Mysuru";
-            user.ResidentialAddress.ZipCode.Code = "ZC002";
-
+            user.ResidentialAddress.Contact.CountryCode = "03";
+            user.ResidentialAddress.Contact.Number = "12345678";
+            
             Assert.NotEqual(user.ResidentialAddress.HouseNumber, user.CommunicationAddress.HouseNumber);
             Assert.NotEqual(user.ResidentialAddress.Street, user.CommunicationAddress.Street);
             Assert.NotEqual(user.ResidentialAddress.City, user.CommunicationAddress.City);
-            Assert.Equal(user.ResidentialAddress.ZipCode.Code, user.CommunicationAddress.ZipCode.Code);
+            Assert.Equal(user.ResidentialAddress.Contact.CountryCode, user.CommunicationAddress.Contact.CountryCode);
+            Assert.Equal(user.ResidentialAddress.Contact.Number, user.CommunicationAddress.Contact.Number);
         }
 
         [Fact]
@@ -66,19 +69,21 @@ namespace DesignPatternTests.CreationalPatterns.PrototypePattern
                 HouseNumber = "333",
                 Street = "Main Street",
                 City = "Bengaluru",
-                ZipCode = new ZipCode { Code = "ZC001" }
+                Contact = new Contact { CountryCode = "91", Number = "98765432" }
             };
 
             user.CopyCompleteResidentialAddressToCommunicationAddress();
             user.ResidentialAddress.HouseNumber = "4444";
             user.ResidentialAddress.Street = "Sub Street";
             user.ResidentialAddress.City = "Mysuru";
-            user.ResidentialAddress.ZipCode.Code = "ZC002";
+            user.ResidentialAddress.Contact.CountryCode = "57";
+            user.ResidentialAddress.Contact.Number = "33003300";
 
             Assert.NotEqual(user.ResidentialAddress.HouseNumber, user.CommunicationAddress.HouseNumber);
             Assert.NotEqual(user.ResidentialAddress.Street, user.CommunicationAddress.Street);
             Assert.NotEqual(user.ResidentialAddress.City, user.CommunicationAddress.City);
-            Assert.NotEqual(user.ResidentialAddress.ZipCode.Code, user.CommunicationAddress.ZipCode.Code);
+            Assert.NotEqual(user.ResidentialAddress.Contact.CountryCode, user.CommunicationAddress.Contact.CountryCode);
+            Assert.NotEqual(user.ResidentialAddress.Contact.Number, user.CommunicationAddress.Contact.Number);
         }
     }
 }

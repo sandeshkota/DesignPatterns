@@ -23,7 +23,7 @@ namespace DesignPatterns.CreationalPatterns.PrototypePattern
 
         public string Street { get; set; }
         public string City { get; set; }
-        public ZipCode ZipCode { get; set; }
+        public Contact Contact { get; set; }
 
         public Address ShallowClone()
         {
@@ -33,18 +33,19 @@ namespace DesignPatterns.CreationalPatterns.PrototypePattern
         public Address DeepClone()
         {
             var clonedAddress = (Address)this.MemberwiseClone();
-            clonedAddress.ZipCode = this.ZipCode.DeepClone();
+            clonedAddress.Contact = this.Contact.DeepClone();
             return clonedAddress;
         }
     }
 
-    public class ZipCode: ICloneable<ZipCode>
+    public class Contact : ICloneable<Contact>
     {
-        public string Code { get; set; }
+        public string CountryCode { get; set; }
+        public string Number { get; set; }
 
-        public ZipCode DeepClone()
+        public Contact DeepClone()
         {
-            return (ZipCode)this.MemberwiseClone();
+            return (Contact)this.MemberwiseClone();
         }
     }
 }

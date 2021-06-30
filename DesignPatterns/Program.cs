@@ -30,6 +30,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            PrototypePattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -49,29 +50,35 @@ namespace DesignPatterns
                 HouseNumber = "333",
                 Street = "Main Street",
                 City = "Bengaluru",
-                ZipCode = new Proto.ZipCode { Code = "ZC001" }
+                Contact = new Proto.Contact { CountryCode = "91", Number = "98765432" }
             };
 
             user.CopyResidentialAddressToCommunicationAddress();
 
             Console.WriteLine("----- Shallow Cloned -----");
-            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
-            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City}," +
+                                $"Contact: {user.ResidentialAddress.Contact.CountryCode} {user.ResidentialAddress.Contact.Number}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City}," +
+                                $"Contact: {user.CommunicationAddress.Contact.CountryCode} {user.CommunicationAddress.Contact.Number}");
 
             Console.WriteLine("----- Changing original Object -----");
             user.ResidentialAddress.HouseNumber = "4444";
-            user.ResidentialAddress.ZipCode.Code = "ZC002";
-            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
-            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+            user.ResidentialAddress.Contact.CountryCode = "03";
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City}," +
+                                $"Contact: {user.ResidentialAddress.Contact.CountryCode} {user.ResidentialAddress.Contact.Number}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City}," +
+                                $"Contact: {user.CommunicationAddress.Contact.CountryCode} {user.CommunicationAddress.Contact.Number}");
 
 
             user.CopyCompleteResidentialAddressToCommunicationAddress();
             
             Console.WriteLine("----- Deep Cloned -----");
             Console.WriteLine("----- Changing original Object -----");
-            user.ResidentialAddress.ZipCode.Code = "ZC003";
-            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
-            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+            user.ResidentialAddress.Contact.CountryCode = "57";
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City}," +
+                                $"Contact: {user.ResidentialAddress.Contact.CountryCode} {user.ResidentialAddress.Contact.Number}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City}," +
+                                $"Contact: {user.CommunicationAddress.Contact.CountryCode} {user.CommunicationAddress.Contact.Number}");
         }
 
         private static void SingletonPattern()
