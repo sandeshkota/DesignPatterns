@@ -21,6 +21,7 @@ using DesignPatterns.CreationalPatterns.FactoryMethodPattern;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeFactory;
 using DesignPatterns.CreationalPatterns.SingletonPattern;
+using Proto = DesignPatterns.CreationalPatterns.PrototypePattern;
 
 namespace DesignPatterns
 {
@@ -30,7 +31,6 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
-
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
@@ -38,6 +38,41 @@ namespace DesignPatterns
         }
 
         #region CREATIONAL PATTERNS
+
+        private static void PrototypePattern()
+        {
+            var user = new Proto.User();
+            user.Name = "Kota";
+            user.PhoneNumber = "99887766";
+            user.ResidentialAddress = new Proto.Address
+            {
+                HouseNumber = "333",
+                Street = "Main Street",
+                City = "Bengaluru",
+                ZipCode = new Proto.ZipCode { Code = "ZC001" }
+            };
+
+            user.CopyResidentialAddressToCommunicationAddress();
+
+            Console.WriteLine("----- Shallow Cloned -----");
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+
+            Console.WriteLine("----- Changing original Object -----");
+            user.ResidentialAddress.HouseNumber = "4444";
+            user.ResidentialAddress.ZipCode.Code = "ZC002";
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+
+
+            user.CopyCompleteResidentialAddressToCommunicationAddress();
+            
+            Console.WriteLine("----- Deep Cloned -----");
+            Console.WriteLine("----- Changing original Object -----");
+            user.ResidentialAddress.ZipCode.Code = "ZC003";
+            Console.WriteLine($"Residential Address: {user.ResidentialAddress.HouseNumber}, {user.ResidentialAddress.Street}, {user.ResidentialAddress.City} - {user.ResidentialAddress.ZipCode.Code}");
+            Console.WriteLine($"Communication Address: {user.CommunicationAddress.HouseNumber}, {user.CommunicationAddress.Street}, {user.CommunicationAddress.City} - {user.CommunicationAddress.ZipCode.Code}");
+        }
 
         private static void SingletonPattern()
         {
