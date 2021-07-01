@@ -22,6 +22,8 @@ using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeFactory;
 using DesignPatterns.CreationalPatterns.SingletonPattern;
 using Proto = DesignPatterns.CreationalPatterns.PrototypePattern;
+using DesignPatterns.CreationalPatterns.BuilderPattern;
+using DesignPatterns.CreationalPatterns.BuilderPattern.Builders;
 
 namespace DesignPatterns
 {
@@ -30,7 +32,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            PrototypePattern();
+
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -39,6 +41,29 @@ namespace DesignPatterns
         }
 
         #region CREATIONAL PATTERNS
+        public static void BuilderPattern()
+        {
+            var giftCardCreator = new GiftCardCreator();
+            var normalGiftCardBuilder = new NormalGiftCardBuilder(300);
+            var normalGiftCard = giftCardCreator.CreateGiftCard(normalGiftCardBuilder);
+            PrintGiftCard(normalGiftCard);
+
+            var goldGiftCardBuilder = new GoldGiftCardBuilder(300);
+            var goldGiftCard = giftCardCreator.CreateGiftCard(goldGiftCardBuilder);
+            PrintGiftCard(goldGiftCard);
+
+            var platinumGiftCardBuilder = new PlatinumGiftCardBuilder(300);
+            var platinumGiftCard = giftCardCreator.CreateGiftCard(platinumGiftCardBuilder);
+            PrintGiftCard(platinumGiftCard);
+        }
+        private static void PrintGiftCard(GiftCard giftCard)
+        {
+            Console.WriteLine($"----- {giftCard.CardType} -----");
+            Console.WriteLine($"Card Number: {giftCard.CardNumber} (CVV : {giftCard.CVV})");
+            Console.WriteLine($"CardExpiry Date: {giftCard.ExpirtyDate.ToShortDateString()}");
+            Console.WriteLine($"Total Balance: {giftCard.Amount}");
+            Console.WriteLine();
+        }
 
         private static void PrototypePattern()
         {
