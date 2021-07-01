@@ -19,7 +19,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
 - Creational Patterns
   - [Factory Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/FactoryMethodPattern)
   - Abstract Factory Pattern
-  - Builder Pattern
+  - [Builder Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/BuilderPattern)
   - [Prototype Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/PrototypePattern)
   - [Singleton Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/SingletonPattern)
 - Structural Patterns
