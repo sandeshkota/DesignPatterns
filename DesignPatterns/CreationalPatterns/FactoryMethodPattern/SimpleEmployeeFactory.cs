@@ -11,15 +11,19 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethodPattern
     {
         public BaseEmployeeService GetEmployeeService(EmployeeType employeeType)
         {
+            BaseEmployeeService employeeService = null;
+            
             switch (employeeType)
             {
                 case EmployeeType.PermanentEmployee:
-                    return new PermanentEmployeeService();
+                    employeeService = new PermanentEmployeeService();
+                    break;
                 case EmployeeType.ContractEmployee:
-                    return new ContractEmployeeService();
-                default:
-                    return null;
+                    employeeService = new ContractEmployeeService();
+                    break;
             }
+
+            return employeeService;
         }
     }
 }
