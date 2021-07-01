@@ -10,7 +10,7 @@ namespace DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern
     {
         private IReimburser _successor;
         private const double REIMBURSE_LIMIT = 100.00;
-        public bool HasReimbursed = false;
+        public bool HasReimbursed { get; private set; } = false;
 
         public void Reimburse(double amount)
         {

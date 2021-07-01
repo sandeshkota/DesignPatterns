@@ -6,7 +6,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
     public class Account : IAccount
     {
         // TODO :: change access modifier
-        public double _balance;
+        public double Balance { get; set; }
         private readonly string _number;
         private readonly string _ifscCode;
         private IAccountState _accountState;
@@ -15,7 +15,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
         {
             this._number = number;
             this._ifscCode = ifscCode;
-            this._balance = initialBalance;
+            this.Balance = initialBalance;
             this._accountState = new OpenedAccountState(this);
         }
 
@@ -43,7 +43,7 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern
 
         public double GetAccountBalance()
         {
-            return this._balance;
+            return this.Balance;
         }
 
         public void ChangeToOpenedState()

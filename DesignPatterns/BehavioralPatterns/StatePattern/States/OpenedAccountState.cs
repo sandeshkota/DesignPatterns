@@ -21,14 +21,14 @@ namespace DesignPatterns.BehavioralPatterns.StatePattern.States
 
         public void DepositMoney(double money)
         {
-            this._account._balance += money;
+            this._account.Balance += money;
         }
 
         public double WithdrawMoney(double money)
         {
-            if(this._account._balance >= money)
+            if(this._account.Balance >= money)
             {
-                this._account._balance -= money;
+                this._account.Balance -= money;
                 return money;
             }
 

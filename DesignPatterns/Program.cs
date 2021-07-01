@@ -65,7 +65,7 @@ namespace DesignPatterns
             Console.WriteLine();
         }
 
-        private static void PrototypePattern()
+        public static void PrototypePattern()
         {
             var user = new Proto.User();
             user.Name = "Kota";
@@ -106,7 +106,7 @@ namespace DesignPatterns
                                 $"Contact: {user.CommunicationAddress.Contact.CountryCode} {user.CommunicationAddress.Contact.Number}");
         }
 
-        private static void SingletonPattern()
+        public static void SingletonPattern()
         {
             var configurationManager = ConfigurationManager.GetInstance();
             Console.WriteLine(configurationManager.GetValue("database"));

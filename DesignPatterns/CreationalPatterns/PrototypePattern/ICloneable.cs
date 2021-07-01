@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.CreationalPatterns.PrototypePattern
 {
-    public interface ICloneable<T>
+    public interface ICloneable<out T>
     {
         T DeepClone();
     }

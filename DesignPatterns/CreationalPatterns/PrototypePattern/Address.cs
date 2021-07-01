@@ -9,7 +9,7 @@ namespace DesignPatterns.CreationalPatterns.PrototypePattern
     public class Address: ICloneable<Address>, IShallowCloneable<Address>
     {
 
-        private char HouseNumberAppender = '#';
+        private readonly char HouseNumberAppender = '#';
 
         private string _houseNumber;
         public string HouseNumber {
