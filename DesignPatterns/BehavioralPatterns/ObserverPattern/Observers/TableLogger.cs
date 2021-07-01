@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.ObserverPattern.Observers
 {
     public class TableLogger : IObserver
     {
-        public bool IsSavedToDB = false;
+        public bool IsSavedToDB { get; private set; } = false;
 
         public void update(IExceptionHandler errorHandler)
         {

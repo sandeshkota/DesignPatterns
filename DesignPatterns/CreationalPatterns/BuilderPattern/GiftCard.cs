@@ -54,7 +54,7 @@ namespace DesignPatterns.CreationalPatterns.BuilderPattern
     }
 
 
-    internal class Helper
+    internal static class Helper
     {
         internal static string GetRandomString(int length)
         {

@@ -9,7 +9,7 @@ namespace DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern
     public class ChiefFinancialOfficer : IReimburser
     {
         private const double REIMBURSE_LIMIT = 1000.00;
-        public bool HasReimbursed = false;
+        public bool HasReimbursed { get; private set; } = false;
 
         public void Reimburse(double amount)
         {

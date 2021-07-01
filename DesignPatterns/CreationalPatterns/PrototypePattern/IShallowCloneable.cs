@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.CreationalPatterns.PrototypePattern
 {
-    interface IShallowCloneable<T>
+    interface IShallowCloneable<out T>
     {
         T ShallowClone();
     }

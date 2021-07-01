@@ -8,7 +8,7 @@ namespace DesignPatterns.BehavioralPatterns.ObserverPattern.Observers
 {
     public class EmailLogger : IObserver
     {
-        public bool IsEmailSent = false;
+        public bool IsEmailSent { get; private set; } = false;
         public void update(IExceptionHandler errorHandler)
         {
             var message = errorHandler.GetData();

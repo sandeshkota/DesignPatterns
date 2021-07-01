@@ -8,7 +8,7 @@ namespace DesignPatterns.CreationalPatterns.BuilderPattern.Builders
 {
     public class NormalGiftCardBuilder : IGiftCardBuilder
     {
-        private double _amount;
+        private readonly double _amount;
         public NormalGiftCardBuilder(double amount)
         {
             this._amount = amount;
