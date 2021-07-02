@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using DesignPatterns.BehavioralPatterns.MediatorPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
@@ -16,7 +17,6 @@ using DesignPatterns.BehavioralPatterns.VisitorPattern.Visitors;
 using DesignPatterns.BehavioralPatterns.VisitorPattern.CreditCard;
 using DesignPatterns.BehavioralPatterns.MementoPattern;
 using DesignPatterns.BehavioralPatterns.StatePattern;
-using System.Diagnostics.CodeAnalysis;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService;
 using DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeFactory;
@@ -24,6 +24,7 @@ using DesignPatterns.CreationalPatterns.SingletonPattern;
 using Proto = DesignPatterns.CreationalPatterns.PrototypePattern;
 using DesignPatterns.CreationalPatterns.BuilderPattern;
 using DesignPatterns.CreationalPatterns.BuilderPattern.Builders;
+using DesignPatterns.CreationalPatterns.AbstractFactoryPattern.UnitTestingFramework;
 
 namespace DesignPatterns
 {
@@ -41,6 +42,21 @@ namespace DesignPatterns
         }
 
         #region CREATIONAL PATTERNS
+        public static void AbstractFactoryPattern()
+        {
+            IUnitTestingFramework nUnitTestingFramework = new NUnitTestingFramework();
+            var nUnitTest = nUnitTestingFramework.GetUnitTest();
+            var nUnitTestLibrary = nUnitTestingFramework.GetUnitTestingLibrary();
+
+            Console.WriteLine($"Unit Test: {nUnitTest.GetName()} | Unit Test Library: {nUnitTestLibrary.GetName()}");
+
+            nUnitTestingFramework = new JUnitTestingFramework();
+            var jUnitTest = nUnitTestingFramework.GetUnitTest();
+            var jUnitTestLibrary = nUnitTestingFramework.GetUnitTestingLibrary();
+
+            Console.WriteLine($"Unit Test: {jUnitTest.GetName()} | Unit Test Library: {jUnitTestLibrary.GetName()}");
+        }
+
         public static void BuilderPattern()
         {
             var giftCardCreator = new GiftCardCreator();
