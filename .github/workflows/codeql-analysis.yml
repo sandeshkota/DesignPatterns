@@ -15,6 +15,7 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
+      - '.circleci/**'
       - '**.md'
       - 'Assets/**'
       - '.github/**'
