@@ -34,7 +34,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
 ## Classification
 - Creational Patterns
   - [Factory Method Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/FactoryMethodPattern)
-  - Abstract Factory Pattern
+  - [Abstract Factory Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/AbstractFactoryPattern)
   - [Builder Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/BuilderPattern)
   - [Prototype Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/PrototypePattern)
   - [Singleton Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/SingletonPattern)
