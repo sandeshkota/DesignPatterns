@@ -25,6 +25,10 @@ using Proto = DesignPatterns.CreationalPatterns.PrototypePattern;
 using DesignPatterns.CreationalPatterns.BuilderPattern;
 using DesignPatterns.CreationalPatterns.BuilderPattern.Builders;
 using DesignPatterns.CreationalPatterns.AbstractFactoryPattern.UnitTestingFramework;
+using DesignPatterns.StructuralPatterns.AdapterPattern;
+using DesignPatterns.StructuralPatterns.AdapterPattern.Email;
+using DesignPatterns.StructuralPatterns.AdapterPattern.TextFile;
+using DesignPatterns.StructuralPatterns.AdapterPattern.EmailAdapter;
 
 namespace DesignPatterns
 {
@@ -34,12 +38,31 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
-
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
         }
+
+        #region STRUCTURAL PATTERN
+
+        public static void AdapterPattern()
+        {
+            ITextReader textReader = new TextReader();
+            var textDataFormatter = new DataFormatter(textReader);
+
+            var textData = textDataFormatter.GetData();
+            Console.WriteLine(textData);
+
+            IEmailReader emailReader = new EmailReader();
+            ITextReader emailReaderAdapter = new EmailReaderAdapter(emailReader);
+            var emailDataFormatter = new DataFormatter(emailReaderAdapter);
+
+            var emailData = emailDataFormatter.GetData();
+            Console.WriteLine(emailData);
+        }
+
+        #endregion
 
         #region CREATIONAL PATTERNS
         public static void AbstractFactoryPattern()
