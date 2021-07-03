@@ -5,7 +5,7 @@ namespace DesignPatterns.StructuralPatterns.AdapterPattern.EmailAdapter
 {
     public class EmailReaderAdapter : ITextReader
     {
-        private IEmailReader _emailReader;
+        private readonly IEmailReader _emailReader;
         public EmailReaderAdapter(IEmailReader emailReader)
         {
             this._emailReader = emailReader;
