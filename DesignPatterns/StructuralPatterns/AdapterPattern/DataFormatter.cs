@@ -9,7 +9,7 @@ namespace DesignPatterns.StructuralPatterns.AdapterPattern
 {
     public class DataFormatter
     {
-        private ITextReader _textReader;
+        private readonly ITextReader _textReader;
         public DataFormatter(ITextReader textReader)
         {
             this._textReader = textReader;
