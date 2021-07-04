@@ -9,10 +9,8 @@ namespace DesignPatterns.StructuralPatterns.BridgePattern.Display
 {
     public class CardDisplay : Display
     {
-        private IItemService _itemService;
         public CardDisplay(IItemService itemService) : base(itemService)
         {
-            this._itemService = itemService;
         }
 
         public override string Show()
