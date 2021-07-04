@@ -9,8 +9,8 @@ namespace DesignPatterns.StructuralPatterns.BridgePattern.Display
 {
     public abstract class Display
     {
-        private IItemService _itemService;
-        public Display(IItemService itemService)
+        protected readonly IItemService _itemService;
+        protected Display(IItemService itemService)
         {
             this._itemService = itemService;
         }

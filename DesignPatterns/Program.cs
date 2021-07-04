@@ -46,7 +46,7 @@ namespace DesignPatterns
             Console.WriteLine();
             Console.WriteLine("Enter any ket to exit........");
             Console.ReadLine();
-        }
+        }   
 
         #region STRUCTURAL PATTERN
 

@@ -9,10 +9,8 @@ namespace DesignPatterns.StructuralPatterns.BridgePattern.Display
 {
     public class ThumbNailDisplay: Display
     {
-        private IItemService _itemService;
         public ThumbNailDisplay(IItemService itemService): base(itemService)
         {
-            this._itemService = itemService;
         }
 
         public override string Show()
