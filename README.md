@@ -40,11 +40,11 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - [Singleton Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/CreationalPatterns/SingletonPattern)
 - Structural Patterns
   - [Adapter Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/AdapterPattern)
-  - Bridge Pattern
+  - [Bridge Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/BridgePattern)
   - Composite Pattern
   - Decorator Pattern
   - Facade Pattern
-  - Flyweign Pattern
+  - Flyweight Pattern
   - Proxy Pattern
 - Behavioral Patterns
   - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
