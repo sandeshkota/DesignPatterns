@@ -8,6 +8,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService
 {
     public class ContractEmployeeService : BaseEmployeeService
     {
+        private const double FOOD_ALLOWANCE = 100;
         public override EmployeeType GetEmployeeType()
         {
             return EmployeeType.ContractEmployee;
@@ -20,7 +21,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService
 
         public double GetFoodAllowance()
         {
-            return 100;
+            return FOOD_ALLOWANCE;
         }
     }
 }

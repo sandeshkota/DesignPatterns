@@ -8,6 +8,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService
 {
     public class PermanentEmployeeService : BaseEmployeeService
     {
+        private const double YEARLY_BONUS = 2000;
         public override EmployeeType GetEmployeeType()
         {
             return EmployeeType.PermanentEmployee;
@@ -20,7 +21,7 @@ namespace DesignPatterns.CreationalPatterns.FactoryMethodPattern.EmployeeService
 
         public double GetYearlyBonus()
         {
-            return 2000;
+            return YEARLY_BONUS;
         }
     }
 }

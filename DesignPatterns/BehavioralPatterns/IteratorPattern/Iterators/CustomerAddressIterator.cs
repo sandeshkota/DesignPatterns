@@ -43,7 +43,7 @@ namespace DesignPatterns.BehavioralPatterns.IteratorPattern.Iterators
             _iterator++;
         }
 
-        private Address ParseAddress(string address)
+        private static Address ParseAddress(string address)
         {
             var addressArray = address.Split(',');
             return new Address
