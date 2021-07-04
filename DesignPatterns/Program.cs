@@ -29,6 +29,9 @@ using DesignPatterns.StructuralPatterns.AdapterPattern;
 using DesignPatterns.StructuralPatterns.AdapterPattern.Email;
 using DesignPatterns.StructuralPatterns.AdapterPattern.TextFile;
 using DesignPatterns.StructuralPatterns.AdapterPattern.EmailAdapter;
+using DesignPatterns.StructuralPatterns.BridgePattern.Display;
+using DesignPatterns.StructuralPatterns.BridgePattern.ItemService;
+using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 
 namespace DesignPatterns
 {
@@ -37,6 +40,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+            
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -45,6 +49,30 @@ namespace DesignPatterns
         }
 
         #region STRUCTURAL PATTERN
+
+        public static void BridgePattern()
+        {
+            var book = new Book { Name = "Harry Potter", BookPhoto = "hp.jpg", Synopsis = "Fantasy" };
+            var artist = new Artist { Name = "JK Rowling", ProfilePhoto = "jkr.jpg", Bio = "From UK" };
+
+            IItemService bookService = new BookItemService(book);
+            Display cardDisplay = new CardDisplay(bookService);
+            Console.WriteLine("----- Book: Card -----");
+            Console.WriteLine(cardDisplay.Show());
+
+            IItemService artistService = new ArtistItemService(artist);
+            cardDisplay = new CardDisplay(artistService);
+            Console.WriteLine("----- Artist: Card -----");
+            Console.WriteLine(cardDisplay.Show());
+
+            Display thumbDisplay = new ThumbNailDisplay(bookService);
+            Console.WriteLine("----- Book: Thumbnail -----");
+            Console.WriteLine(thumbDisplay.Show());
+
+            thumbDisplay = new ThumbNailDisplay(artistService);
+            Console.WriteLine("----- Artist: Thumbnail-----");
+            Console.WriteLine(thumbDisplay.Show());
+        }
 
         public static void AdapterPattern()
         {
