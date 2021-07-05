@@ -44,7 +44,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - Composite Pattern
   - Decorator Pattern
   - Facade Pattern
-  - Flyweight Pattern
+  - [Flyweight Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/FlyweightPattern)
   - Proxy Pattern
 - Behavioral Patterns
   - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
