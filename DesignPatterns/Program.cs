@@ -41,7 +41,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            FlyweightPattern(); 
+
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();

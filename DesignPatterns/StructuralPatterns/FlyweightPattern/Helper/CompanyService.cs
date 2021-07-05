@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns.StructuralPatterns.FlyweightPattern.Helper
 {
-    public class CompanyService
+    public static class CompanyService
     {
         private static Dictionary<string, string> companyData = new();
 
