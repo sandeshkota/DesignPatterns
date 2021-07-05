@@ -32,6 +32,7 @@ using DesignPatterns.StructuralPatterns.AdapterPattern.EmailAdapter;
 using DesignPatterns.StructuralPatterns.BridgePattern.Display;
 using DesignPatterns.StructuralPatterns.BridgePattern.ItemService;
 using DesignPatterns.StructuralPatterns.BridgePattern.Product;
+using DesignPatterns.StructuralPatterns.FlyweightPattern;
 
 namespace DesignPatterns
 {
@@ -40,7 +41,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            
+            FlyweightPattern(); 
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -49,6 +50,20 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void FlyweightPattern()
+        {
+            var companyCode = "COM0123";
+            var employeeFactory = new EmployeeFactory();
+
+            var employee = employeeFactory.GetEmployee(companyCode);
+            employee.SetName("Sandesh");
+            Console.WriteLine(employee.GetDetails());
+
+            var newEmployee = employeeFactory.GetEmployee(companyCode);
+            newEmployee.SetName("Kota");
+            Console.WriteLine(newEmployee.GetDetails());
+        }
 
         public static void BridgePattern()
         {
