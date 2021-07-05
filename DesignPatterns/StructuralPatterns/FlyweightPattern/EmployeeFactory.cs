@@ -8,7 +8,7 @@ namespace DesignPatterns.StructuralPatterns.FlyweightPattern
 {
     public class EmployeeFactory
     {
-        Dictionary<string, Employee> employees = new();
+        private readonly Dictionary<string, Employee> employees = new();
         public Employee GetEmployee(string companyCode)
         {
             if (employees.ContainsKey(companyCode))
