@@ -33,6 +33,7 @@ using DesignPatterns.StructuralPatterns.BridgePattern.Display;
 using DesignPatterns.StructuralPatterns.BridgePattern.ItemService;
 using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 using DesignPatterns.StructuralPatterns.FlyweightPattern;
+using DesignPatterns.StructuralPatterns.ProxyPattern;
 
 namespace DesignPatterns
 {
@@ -41,7 +42,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-
+            ProxyPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -50,6 +51,17 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void ProxyPattern()
+        {
+            var fileParser = new FileParser("d:/temp/big_file.txt");
+            Console.WriteLine(fileParser.GetNumberOfLines());
+            Console.WriteLine(fileParser.GetNumberOfWords());
+
+            var lazyFileParserProxy = new LazyFileParserProxy("d:/temp/big_file.txt");
+            Console.WriteLine(lazyFileParserProxy.GetNumberOfLines());
+            Console.WriteLine(lazyFileParserProxy.GetNumberOfWords());
+        }
 
         public static void FlyweightPattern()
         {
