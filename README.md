@@ -45,7 +45,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - Decorator Pattern
   - Facade Pattern
   - [Flyweight Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/FlyweightPattern)
-  - Proxy Pattern
+  - [Proxy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/ProxyPattern)
 - Behavioral Patterns
   - [Chain Of Responsibility Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/ChainOfResponsibilityPattern)
   - [Command Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/BehavioralPatterns/CommandPattern)
