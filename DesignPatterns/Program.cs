@@ -43,7 +43,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            FacadePattern();
+            CompositePattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -52,6 +52,11 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void CompositePattern()
+        {
+
+        }
 
         public static void FacadePattern()
         {
