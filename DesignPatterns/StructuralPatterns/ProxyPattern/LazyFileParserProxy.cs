@@ -9,7 +9,7 @@ namespace DesignPatterns.StructuralPatterns.ProxyPattern
     public class LazyFileParserProxy : IFileParser
     {
         private FileParser _parser = null;
-        private string _filePath;
+        private readonly string _filePath;
         public LazyFileParserProxy(string filePath)
         {
             this._filePath = filePath;

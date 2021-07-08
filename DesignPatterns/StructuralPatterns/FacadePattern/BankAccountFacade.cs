@@ -10,9 +10,9 @@ namespace DesignPatterns.StructuralPatterns.FacadePattern
     {
         private readonly int _accountNumber;
         private readonly int _securityCode;
-        private AccountValidator _accountValidator;
-        private SecurityCodeValidator _securityCodeValidator;
-        private BankAccount _bankAccount;
+        private readonly AccountValidator _accountValidator;
+        private readonly SecurityCodeValidator _securityCodeValidator;
+        private readonly BankAccount _bankAccount;
 
         public BankAccountFacade(int accountNumber, int securityCode)
         {
@@ -27,9 +27,11 @@ namespace DesignPatterns.StructuralPatterns.FacadePattern
 
         public void WithdrawCash(double amount)
         {
-            if(this._accountValidator.ValidateAccountNumber(this._accountNumber)
-                && this._securityCodeValidator.ValidateSecurityCode(this._securityCode) 
-                && this._bankAccount.IsFundsAvailable(amount) )
+            if(
+                    this._accountValidator.ValidateAccountNumber(this._accountNumber)
+                    && this._securityCodeValidator.ValidateSecurityCode(this._securityCode) 
+                    && this._bankAccount.IsFundsAvailable(amount) 
+                )
             {
                 this._bankAccount.DebitAmount(amount);
             }
