@@ -34,6 +34,7 @@ using DesignPatterns.StructuralPatterns.BridgePattern.ItemService;
 using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 using DesignPatterns.StructuralPatterns.FlyweightPattern;
 using DesignPatterns.StructuralPatterns.ProxyPattern;
+using DesignPatterns.StructuralPatterns.FacadePattern;
 
 namespace DesignPatterns
 {
@@ -42,7 +43,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            ProxyPattern();
+            FacadePattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -51,6 +52,22 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void FacadePattern()
+        {
+            var bankAccountFacade = new BankAccountFacade(1234567890, 12345);
+            bankAccountFacade.WithdrawCash(50.00);
+            Console.WriteLine(bankAccountFacade.GetAccountBalance());
+
+            try
+            {
+                bankAccountFacade.WithdrawCash(100.00);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
 
         public static void ProxyPattern()
         {
