@@ -71,11 +71,11 @@ namespace DesignPatterns
 
         public static void ProxyPattern()
         {
-            var fileParser = new FileParser("d:/temp/big_file.txt");
+            var fileParser = new FileParser("/temp/big_file.txt");
             Console.WriteLine(fileParser.GetNumberOfLines());
             Console.WriteLine(fileParser.GetNumberOfWords());
 
-            var lazyFileParserProxy = new LazyFileParserProxy("d:/temp/big_file.txt");
+            var lazyFileParserProxy = new LazyFileParserProxy("/temp/big_file.txt");
             Console.WriteLine(lazyFileParserProxy.GetNumberOfLines());
             Console.WriteLine(lazyFileParserProxy.GetNumberOfWords());
         }
