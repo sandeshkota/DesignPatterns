@@ -9,6 +9,7 @@ using DesignPatterns.BehavioralPatterns.TemplateMethodPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
 using DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
+using Chain = DesignPatterns.BehavioralPatterns.ChainOfResponsibilityPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern;
 using DesignPatterns.BehavioralPatterns.CommandPattern.Commands;
 using DesignPatterns.BehavioralPatterns.IteratorPattern;
@@ -35,6 +36,9 @@ using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 using DesignPatterns.StructuralPatterns.FlyweightPattern;
 using DesignPatterns.StructuralPatterns.ProxyPattern;
 using DesignPatterns.StructuralPatterns.FacadePattern;
+using DesignPatterns.StructuralPatterns.CompositePattern;
+using Composite = DesignPatterns.StructuralPatterns.CompositePattern;
+using System.Collections.Generic;
 
 namespace DesignPatterns
 {
@@ -43,7 +47,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            FacadePattern();
+
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -52,6 +56,20 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void CompositePattern()
+        {
+            var sandesh = new Member("Sandesh");
+            var kota = new Member("Kota");
+            var ashwin = new Member("Ashwin");
+            var kohli = new Member("Kohli");
+
+            var raina = new Composite.Manager("Raina", new List<IEmployee> { sandesh, kota });
+            var devdut = new Composite.Manager("Devdut", new List<IEmployee> { ashwin, raina });
+            var rahul = new Composite.Manager("Rahul", new List<IEmployee> { devdut, kohli });
+
+            Console.WriteLine(rahul.GetDetails());
+        }
 
         public static void FacadePattern()
         {
@@ -462,7 +480,7 @@ namespace DesignPatterns
         public static void ChainOfResponsibilityPattern()
         {
             var teamLeader = new TeamLeader();
-            var manager = new Manager();
+            var manager = new Chain.Manager();
             var cfo = new ChiefFinancialOfficer();
             teamLeader.SetNextReimburser(manager);
             manager.SetNextReimburser(cfo);
