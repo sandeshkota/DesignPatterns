@@ -42,7 +42,7 @@ was published in 1994 by four authors who are famously called as **Gang Of Four*
   - [Adapter Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/AdapterPattern)
   - [Bridge Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/BridgePattern)
   - [Composite Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/CompositePattern)
-  - Decorator Pattern
+  - [Decorator Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/DecoratorPattern)
   - [Facade Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/FacadePattern)
   - [Flyweight Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/FlyweightPattern)
   - [Proxy Pattern](https://github.com/sandeshkota/DesignPatterns/tree/main/DesignPatterns/StructuralPatterns/ProxyPattern)
