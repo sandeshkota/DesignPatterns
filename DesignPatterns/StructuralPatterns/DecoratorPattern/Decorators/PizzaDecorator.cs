@@ -9,7 +9,7 @@ namespace DesignPatterns.StructuralPatterns.DecoratorPattern.Decorators
     public abstract class PizzaDecorator : PizzaBase
     {
         protected readonly PizzaBase pizzaBase;
-        public PizzaDecorator(PizzaBase pizzaBase)
+        protected PizzaDecorator(PizzaBase pizzaBase)
         {
             this.pizzaBase = pizzaBase;
         }
