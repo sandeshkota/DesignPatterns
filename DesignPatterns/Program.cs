@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using DesignPatterns.BehavioralPatterns.MediatorPattern;
 using DesignPatterns.BehavioralPatterns.StrategyPattern;
+using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.DiscountStrategies;
 using DesignPatterns.BehavioralPatterns.StrategyPattern.InterestStrategies;
-using DesignPatterns.BehavioralPatterns.StrategyPattern.RatingStrategies;
 using DesignPatterns.BehavioralPatterns.TemplateMethodPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern;
 using DesignPatterns.BehavioralPatterns.ObserverPattern.Observers;
@@ -30,15 +31,16 @@ using DesignPatterns.StructuralPatterns.AdapterPattern;
 using DesignPatterns.StructuralPatterns.AdapterPattern.Email;
 using DesignPatterns.StructuralPatterns.AdapterPattern.TextFile;
 using DesignPatterns.StructuralPatterns.AdapterPattern.EmailAdapter;
+using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 using DesignPatterns.StructuralPatterns.BridgePattern.Display;
 using DesignPatterns.StructuralPatterns.BridgePattern.ItemService;
-using DesignPatterns.StructuralPatterns.BridgePattern.Product;
 using DesignPatterns.StructuralPatterns.FlyweightPattern;
 using DesignPatterns.StructuralPatterns.ProxyPattern;
 using DesignPatterns.StructuralPatterns.FacadePattern;
 using DesignPatterns.StructuralPatterns.CompositePattern;
 using Composite = DesignPatterns.StructuralPatterns.CompositePattern;
-using System.Collections.Generic;
+using DesignPatterns.StructuralPatterns.DecoratorPattern;
+using DesignPatterns.StructuralPatterns.DecoratorPattern.Decorators;
 
 namespace DesignPatterns
 {
@@ -47,7 +49,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-
+            DecoratorPattern();
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
@@ -56,6 +58,24 @@ namespace DesignPatterns
         }   
 
         #region STRUCTURAL PATTERN
+
+        public static void DecoratorPattern()
+        {
+            var myPizza = new ThinCrustPizzaBase();
+            PrintPizza(myPizza);
+            var myCheesePizza = new CheeseDecorator(myPizza);
+            PrintPizza(myCheesePizza);
+            var myCheeseOnionPizza = new OnionDecorator(myCheesePizza);
+            PrintPizza(myCheeseOnionPizza);
+            var myCheeseOnionJalapenoPizza = new JalapenoDecorator(myCheeseOnionPizza);
+            PrintPizza(myCheeseOnionJalapenoPizza);
+        }
+        private static void PrintPizza(PizzaBase pizza)
+        {
+            Console.WriteLine("----- PIZZA -----");
+            Console.WriteLine($"Reciepe = {pizza.GetReciepe()}");
+            Console.WriteLine($"Cost = {pizza.GetCost()}");
+        }
 
         public static void CompositePattern()
         {
