@@ -7,12 +7,14 @@ on:
       - '.circleci/**'
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
   pull_request:
     branches: [ main ]
     paths-ignore:
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
 
 jobs:
