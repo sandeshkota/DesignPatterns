@@ -18,6 +18,7 @@ on:
       - '.circleci/**'
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
   pull_request:
     # The branches below must be a subset of the branches above
@@ -25,6 +26,7 @@ on:
     paths-ignore:
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
   schedule:
     - cron: '42 6 * * 1'
