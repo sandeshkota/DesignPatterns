@@ -7,12 +7,14 @@ on:
       - '.circleci/**'
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
   pull_request:
     types: [opened, synchronize, reopened]
     paths-ignore:
       - '**.md'
       - 'Assets/**'
+      - '**/assets/**'
       - '.github/**'
     
 jobs:
