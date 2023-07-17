@@ -12,7 +12,7 @@ namespace DesignPatterns.StructuralPatterns.DecoratorPattern
         {
             return 100;
         }
-
+        
         public override string GetReciepe()
         {
             return "Pizza = [Thick Crust] ";
